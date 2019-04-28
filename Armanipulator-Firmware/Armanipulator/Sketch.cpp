@@ -1,14 +1,12 @@
-﻿/*Begining of Auto generated code by Atmel studio */
+﻿//Sketch.cpp
+//The "main()"/loop function for the firmware
+//Cross-references other sources to keep it clean :)
 #include <Arduino.h>
-
-/*End of auto generated code by Atmel studio */
-
-
-//Beginning of Auto generated function prototypes by Atmel Studio
-//End of Auto generated function prototypes by Atmel Studio
+#include <cpu_map.h>
 
 void setup() {
-  // put your setup code here, to run once:
+  Serial.begin(115200);
+  Serial.write("Initalizing Manipulator")
 
 }
 

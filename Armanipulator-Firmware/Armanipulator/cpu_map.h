@@ -10,8 +10,17 @@
 #ifndef CPU_MAP
 #define CPU_MAP
 
-//Define Wrist Rotation Pins
+//Define Wrist Driver Pins
+#define WRIST_ROT_STEP		3
+#define WRIST_ROT_DIR		4
 
+//Define Grip Driver Pins
+#define GRIP_STEP			5
+#define GRIP_DIR			6
+
+//Define Arm Motion Pins
+#define EXTEND_STEP			7
+#define EXTEND_DIR			8
 
 
 
