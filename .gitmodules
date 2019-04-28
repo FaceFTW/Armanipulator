@@ -1,0 +1,3 @@
+[submodule "Armanipulator-Firmware/StepperDriver"]
+	path = Armanipulator-Firmware/StepperDriver
+	url = https://github.com/laurb9/StepperDriver.git
