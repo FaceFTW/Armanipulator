@@ -12,17 +12,14 @@
 
 #ifndef parser_H_
 #define parser_H_
-	
-	/*
-	* \struct cmd
-	* TODO Define struct stuff
-	* 
-	*/
-	typedef struct cmd{
-		double rot;
-		double grip;
-		double extend;
-		int error;
+	enum CMD{ROTATE, GRAB, EXTEND, ERROR};
+	/**
+	 * @brief 
+	 * 
+	 */
+	typedef struct Command{
+		CMD operation;
+		int value;
 	};
 	
 	/**
@@ -30,17 +27,16 @@
 	* \brief Removes newline (\n) characters
 	* \param char[] input
 	*/
-	static char[] removeNL(char[]);
 
 	/**
 	* \fn
 	* 
 	*
 	*/
-	static cmd{} parse(char[]);
+	static Command parse(char[])
 	
 	//Overloaded version of parse
-	static cmd{} parse(int,int,int);
+	static Command parse(char[] op, int val);
 	
 	
 #endif
