@@ -13,7 +13,7 @@
 #ifndef EXEC_H_
 #define EXEC_H_
 	//
-	static void executeO(cmd{});
+	static void execute(cmd{});
 
 
 
