@@ -9,11 +9,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include <parser.h> //defines the cmd struct
+#include
 
 #ifndef EXEC_H_
 #define EXEC_H_
 	//
-	static void execute(cmd{});
+	static void doRotate(struct Command cmd);
+
+	static void doGrip(struct Command cmd);
+
+	static void doExtend(struct Command cmd);
+
 
 
 

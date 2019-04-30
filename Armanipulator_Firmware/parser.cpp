@@ -5,6 +5,7 @@
  * Created: 4/25/2019 2:30:08 PM
  *  Author: FaceF
  */ 
+#include <Arduino.h>
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
@@ -23,30 +24,41 @@
     //Any commands related to extending the arm will start with an 'e' or 'E', then followed by a double indicating motor rotation. We will assert that the value is between -1 and 1 for now
     //Any unrecognized letter will return the ERROR enum and 1 as the value. Serial should display an error message, or trigger an exception
     if (rawinput[0] == 'r' || rawinput[0] == 'R'){
-        out.op = Command::operation::ROTATE;
+        out.op = operation::ROTATE;
         //Extract Value from command string
         out.value = atof(buffer.substring(1, buffer.length()-1).c_str());
     } else if (rawinput[0] == 'g' || rawinput[0] == 'G'){
-        out.op = Command::operation::GRAB;
+        out.op = operation::GRAB;
         //Extract Value from command string
         out.value = atof(buffer.substring(1, buffer.length()-1).c_str());
     } else if (rawinput[0] == 'e' || rawinput[0] == 'E'){
-        out.op = Command::operation::EXTEND;
+        out.op = operation::EXTEND;
         //Extract Value from command string
         out.value = atof(buffer.substring(1, buffer.length()-1).c_str());
     } else{
-        out.op = Command::operation::ERROR;
+        out.op = operation::ERROR;
         out.value  = 1;
     }
     return out;
 }
 
  //Now we move toward execution
- static void determineExec(struct Command op){
+ static void determineExec(struct Command cmd){
+	 operation cmdop = cmd.op;
 	 //TODO: Check efficiency of using a switch statement instead of an if/else chain
 	 //See Jump Tables and low-level intricacies produced by AVR
-	 switch (op.operation){
-	 case op::operation::ROTATE:
+	 switch (cmdop){
+	 case operation::ROTATE:
+		 break;
+
+	 case operation::GRAB:
+		 break;
+
+	 case operation::EXTEND:
+		 break;
+	 case ERROR:
+		 Serial.println("Error, Unrecognized Command");
+		 break;
 
 	 }
  }
