@@ -10,8 +10,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef enum operation{ROTATE, GRAB, EXTEND, ERROR};
+
 typedef struct Command{
-	enum operation{ROTATE, GRAB, EXTEND, ERROR} op;
+	operation op;
 	int value;
 };
 	
