@@ -1,0 +1,166 @@
+<!-- Project file for the Zeus IDE - http://www.zeusedit.com -->
+<Project name="Armanipulator-Firmware" sorted="Yes" autosynch="" type="" filename="" st_mtime="">
+    <SccEnable>On</SccEnable>
+    <SccUserID></SccUserID>
+    <SccComment></SccComment>
+    <SccProject></SccProject>
+    <SccAuxPath></SccAuxPath>
+    <SccLocalPath></SccLocalPath>
+    <TagEnable>On</TagEnable>
+    <TagNone>Off</TagNone>
+    <TagBuildNone>Off</TagBuildNone>
+    <TagBuildOnOpen>On</TagBuildOnOpen>
+    <TagBuildOnSave>On</TagBuildOnSave>
+    <TagNoIntellisense>Off</TagNoIntellisense>
+    <TagWorkspace>On</TagWorkspace>
+    <TagOutputDir>$zudzTags</TagOutputDir>
+    <TagInterval>30</TagInterval>
+    <TagBuildTimed></TagBuildTimed>
+    <Tags />
+    <Server></Server>
+    <UserID></UserID>
+    <Password></Password>
+    <LocalDir></LocalDir>
+    <RemoteDir></RemoteDir>
+    <Classes>Classes</Classes>
+    <Enumerations>Enumerations</Enumerations>
+    <Files>Project Files</Files>
+    <Functions>Functions</Functions>
+    <Imports>Imports</Imports>
+    <Interfaces>Interfaces</Interfaces>
+    <Macros>Macros</Macros>
+    <Packages>Packages</Packages>
+    <Prototypes>Prototypes</Prototypes>
+    <References>References</References>
+    <Structures>Structures</Structures>
+    <Typedefs>Typedefs</Typedefs>
+    <Variables>Variables</Variables>
+    <Unions>Unions</Unions>
+    <Properties>Properties</Properties>
+    <Subroutines>Subroutines</Subroutines>
+    <Annotations>Annotations</Annotations>
+    <Constants>Constants</Constants>
+    <Methods>Methods</Methods>
+    <Modules>Modules</Modules>
+    <Fields>Fields</Fields>
+    <MakeFile></MakeFile>
+    <SearchPath></SearchPath>
+    <RegexFile></RegexFile>
+    <RegexLine></RegexLine>
+    <RegexInfo></RegexInfo>
+    <RegexError></RegexError>
+    <RegexWarning></RegexWarning>
+    <EnvLib></EnvLib>
+    <EnvPath>$MsBuildPath;$JREBin;$GoBin;c:\dmd2\windows\bin;</EnvPath>
+    <EnvInclude></EnvInclude>
+    <EnvClassPath></EnvClassPath>
+    <DoxygenAsJava>Off</DoxygenAsJava>
+    <DebugCaptureStdOut>Off</DebugCaptureStdOut>
+    <DebugCaptureStdErr>Off</DebugCaptureStdErr>
+    <DebugExecutable></DebugExecutable>
+    <DebugArguments></DebugArguments>
+    <DebugDirectory></DebugDirectory>
+    <DebugDebugger></DebugDebugger>
+    <ReleaseCaptureStdOut>Off</ReleaseCaptureStdOut>
+    <ReleaseCaptureStdErr>Off</ReleaseCaptureStdErr>
+    <ReleaseExecutable></ReleaseExecutable>
+    <ReleaseArguments></ReleaseArguments>
+    <ReleaseDirectory></ReleaseDirectory>
+    <ReleaseDebugger></ReleaseDebugger>
+    <DebugMake></DebugMake>
+    <DebugClean></DebugClean>
+    <DebugCompile></DebugCompile>
+    <DebugRebuild></DebugRebuild>
+    <DebugProjectOutput>Always</DebugProjectOutput>
+    <DebugCompilerOutput>Always</DebugCompilerOutput>
+    <DebugCompilerStdOut>On</DebugCompilerStdOut>
+    <DebugCompilerStdErr>On</DebugCompilerStdErr>
+    <DebugCompilerSaveAll>Off</DebugCompilerSaveAll>
+    <DebugCompilerReload>Off</DebugCompilerReload>
+    <DebugProjectStdOut>On</DebugProjectStdOut>
+    <DebugProjectStdErr>On</DebugProjectStdErr>
+    <DebugProjectSaveAll>Off</DebugProjectSaveAll>
+    <DebugProjectReload>Off</DebugProjectReload>
+    <DebugClangUsePCH>On</DebugClangUsePCH>
+    <DebugClangExtension>.zpch</DebugClangExtension>
+    <DebugCompilerCaptureToFile>Off</DebugCompilerCaptureToFile>
+    <DebugProjectCaptureToFile>Off</DebugProjectCaptureToFile>
+    <ReleaseMake>make $ws</ReleaseMake>
+    <ReleaseClean>make clean</ReleaseClean>
+    <ReleaseCompile></ReleaseCompile>
+    <ReleaseRebuild>rebuild $ws</ReleaseRebuild>
+    <ReleaseProjectOutput>Always</ReleaseProjectOutput>
+    <ReleaseCompilerOutput>Always</ReleaseCompilerOutput>
+    <ReleaseCompilerStdOut>On</ReleaseCompilerStdOut>
+    <ReleaseCompilerStdErr>On</ReleaseCompilerStdErr>
+    <ReleaseCompilerSaveAll>Off</ReleaseCompilerSaveAll>
+    <ReleaseCompilerReload>Off</ReleaseCompilerReload>
+    <ReleaseProjectStdOut>On</ReleaseProjectStdOut>
+    <ReleaseProjectStdErr>On</ReleaseProjectStdErr>
+    <ReleaseProjectSaveAll>Off</ReleaseProjectSaveAll>
+    <ReleaseProjectReload>Off</ReleaseProjectReload>
+    <ReleaseClangUsePCH>On</ReleaseClangUsePCH>
+    <ReleaseClangExtension>.zpch</ReleaseClangExtension>
+    <ReleaseCompilerCaptureToFile>Off</ReleaseCompilerCaptureToFile>
+    <ReleaseProjectCaptureToFile>Off</ReleaseProjectCaptureToFile>
+    <File>armanipulator.h</File>
+    <File>Armanipulator.ino</File>
+    <File>cpu_map.h</File>
+    <File>exec.cpp</File>
+    <File>exec.h</File>
+    <File>parser.cpp</File>
+    <File>parser.h</File>
+    <File>Sketch.cpp</File>
+    <File>stringutils.cpp</File>
+    <File>stringutils.h</File>
+    <Folder name="StepperDriver" sorted="Yes">
+        <File>StepperDriver\.cli-config.yml</File>
+        <File>StepperDriver\.travis.yml</File>
+        <File>StepperDriver\_config.yml</File>
+        <File>StepperDriver\keywords.txt</File>
+        <File>StepperDriver\library.properties</File>
+        <File>StepperDriver\README.md</File>
+        <Folder name=".github" sorted="Yes">
+            <Folder name="ISSUE_TEMPLATE" sorted="Yes">
+                <File>StepperDriver\.github\ISSUE_TEMPLATE\bug_report.md</File>
+                <File>StepperDriver\.github\ISSUE_TEMPLATE\feature_request.md</File>
+            </Folder>
+        </Folder>
+        <Folder name="examples" sorted="Yes">
+            <Folder name="AccelTest" sorted="Yes">
+                <File>StepperDriver\examples\AccelTest\AccelTest.ino</File>
+            </Folder>
+            <Folder name="BasicStepperDriver" sorted="Yes">
+                <File>StepperDriver\examples\BasicStepperDriver\BasicStepperDriver.ino</File>
+            </Folder>
+            <Folder name="ClockStepper" sorted="Yes">
+                <File>StepperDriver\examples\ClockStepper\ClockStepper.ino</File>
+            </Folder>
+            <Folder name="MicroStepping" sorted="Yes">
+                <File>StepperDriver\examples\MicroStepping\MicroStepping.ino</File>
+            </Folder>
+            <Folder name="MultiAxis" sorted="Yes">
+                <File>StepperDriver\examples\MultiAxis\MultiAxis.ino</File>
+            </Folder>
+            <Folder name="NonBlocking" sorted="Yes">
+                <File>StepperDriver\examples\NonBlocking\NonBlocking.ino</File>
+            </Folder>
+        </Folder>
+        <Folder name="src" sorted="Yes">
+            <File>StepperDriver\src\A4988.cpp</File>
+            <File>StepperDriver\src\A4988.h</File>
+            <File>StepperDriver\src\BasicStepperDriver.cpp</File>
+            <File>StepperDriver\src\BasicStepperDriver.h</File>
+            <File>StepperDriver\src\DRV8825.cpp</File>
+            <File>StepperDriver\src\DRV8825.h</File>
+            <File>StepperDriver\src\DRV8834.cpp</File>
+            <File>StepperDriver\src\DRV8834.h</File>
+            <File>StepperDriver\src\DRV8880.cpp</File>
+            <File>StepperDriver\src\DRV8880.h</File>
+            <File>StepperDriver\src\MultiDriver.cpp</File>
+            <File>StepperDriver\src\MultiDriver.h</File>
+            <File>StepperDriver\src\SyncDriver.cpp</File>
+            <File>StepperDriver\src\SyncDriver.h</File>
+        </Folder>
+    </Folder>
+</Project>
