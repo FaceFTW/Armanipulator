@@ -8,17 +8,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <parser.h> //defines the cmd struct
-#include
+#include "StepperDriver/src/DRV8825.h"
+#include "StepperDriver/src/A4988.h"
 
 #ifndef EXEC_H_
 #define EXEC_H_
-	//
-	static void doRotate(struct Command cmd);
+	//Rotate Execs
+	static void doRotate(int rotVal, DRV8825 stepper);
+	static void doRotate(int rotVal, A4988 stepper);
 
-	static void doGrip(struct Command cmd);
+	//Grip Execs
+	static void doGrip(int gripVal, DRV8825 stepper);
+	static void doGrip(int gripVal, A4988 stepper);
 
-	static void doExtend(struct Command cmd);
+
+	static void doExtend(int extendVal, DRV8825 stepper);
+	static void doExtend(int extendVal, A4988 stepper);
 
 
 
