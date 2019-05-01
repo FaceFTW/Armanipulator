@@ -5,16 +5,13 @@
  * Created: 4/25/2019 2:30:08 PM
  *  Author: FaceF
  */
-#include <Arduino.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <Wstring.h>
-#include "stringutils.h"
+
 #include "parser.h"
+
+#include <HardwareSerial.h>
+#include <WString.h>
+
 #include "exec.h"
-#include "StepperDriver/src/DRV8825.h"
-#include "StepperDriver/src/A4988.h"
 
 static struct Command parse(String rawinput[]) {
 	struct Command out;
@@ -65,6 +62,7 @@ static void determineExec(struct Command cmd, DRV8825 stepper) {
 
 	}
 }
+
 static void determineExec(struct Command cmd, A4988 stepper) {
 	operation cmdop = cmd.op;
 	//TODO: Check efficiency of using a switch statement instead of an if/else chain
@@ -82,6 +80,5 @@ static void determineExec(struct Command cmd, A4988 stepper) {
 	case ERROR:
 		Serial.println("Error, Unrecognized Command");
 		break;
-
 	}
 }

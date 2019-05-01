@@ -5,11 +5,10 @@
  *  Author: FaceF
  */ 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "StepperDriver/src/DRV8825.h"
-#include "StepperDriver/src/A4988.h"
+
+
+class A4988;
+class DRV8825;
 
 #ifndef EXEC_H_
 #define EXEC_H_

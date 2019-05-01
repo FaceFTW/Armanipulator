@@ -6,11 +6,8 @@
  *  Author: Alex Westerman
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "StepperDriver/src/DRV8825.h"
-#include "StepperDriver/src/A4988.h"
+class A4988;
+class DRV8825;
 
 typedef enum operation {
 	ROTATE, GRAB, EXTEND, ERROR
