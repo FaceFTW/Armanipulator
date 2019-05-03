@@ -6,24 +6,31 @@
  *  Author: Alex Westerman
  */
 
+#include <WString.h>
+#ifndef PARSER_H
+#define PARSER_H
 class A4988;
 class DRV8825;
-
-typedef enum Operation {
+namespace Parser{
+typedef enum  {
 	ROTATE, GRAB, EXTEND, ERROR
-};
+}Arm_Operation;
 
-typedef struct Command {
-	Operation op;
+typedef struct  {
+	Arm_Operation op;
 	int value;
-};
+}Arm_Command;
 
 /**
  * \fn
  *
  *
  */
-static struct Command parse(char*);
-static void determineExec(struct Command cmd, DRV8825 stepper);
-static void determineExec(struct Command cmd, A4988 stepper);
-static void printExec(struct Command cmd);
+ extern "C"{
+static Arm_Command parseSerial(String rawinput);
+//static void determineExec(Arm_Command cmd, DRV8825 *stepper);
+//static void determineExec(Arm_Command cmd, A4988 *stepper);
+static void printExec(Arm_Command cmd);
+}
+}
+#endif

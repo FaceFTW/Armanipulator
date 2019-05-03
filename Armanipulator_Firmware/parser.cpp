@@ -13,12 +13,16 @@
 #include "parser.h"
 
 #include <HardwareSerial.h>
+#include "StepperDriver/src/A4988.h"
+#include "StepperDriver/src/DRV8825.h"
 #include <WString.h>
 
-#include "exec.h"
-
-static struct Command parse(String rawinput[]) {
-	struct Command out;
+//#include "exec.h"
+namespace Parser{
+  extern "C"{
+    
+static Arm_Command parseSerial(String rawinput) {
+	 Arm_Command out;
 	String buffer = rawinput;
 
 	//This is what we expect in terms of input
@@ -26,27 +30,27 @@ static struct Command parse(String rawinput[]) {
 	//Any commands related to gripping will start with a 'g' or 'G', then followed by a 0 or 1. Other values will trigger an exception
 	//Any commands related to extending the arm will start with an 'e' or 'E', then followed by a double indicating motor rotation. We will assert that the value is between -1 and 1 for now
 	//Any unrecognized letter will return the ERROR enum and 1 as the value. Serial should display an error message, or trigger an exception
-	if (rawinput[0] == 'r' || rawinput[0] == 'R') {
-		out.op = Operation::ROTATE;
+	if (rawinput.charAt(0) == 'r' || rawinput.charAt(0) == 'R') {
+		out.op = Arm_Operation::ROTATE;
 		//Extract Value from command string
 		out.value = atof(buffer.substring(1, buffer.length() - 1).c_str());
-	} else if (rawinput[0] == 'g' || rawinput[0] == 'G') {
-		out.op = Operation::GRAB;
+	} else if (rawinput.charAt(0) == 'g' || rawinput.charAt(0) == 'G') {
+		out.op = Arm_Operation::GRAB;
 		//Extract Value from command string
 		out.value = atof(buffer.substring(1, buffer.length() - 1).c_str());
-	} else if (rawinput[0] == 'e' || rawinput[0] == 'E') {
-		out.op = Operation::EXTEND;
+	} else if (rawinput.charAt(0) == 'e' || rawinput.charAt(0) == 'E') {
+		out.op = Arm_Operation::EXTEND;
 		//Extract Value from command string
 		out.value = atof(buffer.substring(1, buffer.length() - 1).c_str());
 	} else {
-		out.op = Operation::ERROR;
+		out.op = Arm_Operation::ERROR;
 		out.value = 1;
 	}
 	return out;
 }
-
+/*
 //Now we move toward execution
-static void determineExec(struct Command cmd, DRV8825 stepper) {
+static void determineExec( Command cmd, DRV8825 *stepper) {
 	Operation cmdop = cmd.op;
 	//TODO: Check efficiency of using a switch statement instead of an if/else chain
 	//See Jump Tables and low-level intricacies produced by AVR
@@ -67,48 +71,49 @@ static void determineExec(struct Command cmd, DRV8825 stepper) {
 	}
 }
 
-static void determineExec(struct Command cmd, A4988 stepper) {
+static void determineExec( Command cmd, A4988 *stepper) {
 	Operation cmdop = cmd.op;
 	//TODO: Check efficiency of using a switch statement instead of an if/else chain
 	//See Jump Tables and low-level intricacies produced by AVR
 	switch (cmdop) {
 	case Operation::ROTATE:
-		doRotate(cmd.value, stepper);
+		doRotate(cmd.value, *stepper);
 		break;
 	case Operation::GRAB:
-		doGrip(cmd.value, stepper);
+		doGrip(cmd.value, *stepper);
 		break;
 	case Operation::EXTEND:
-		doExtend(cmd.value, stepper);
+		doExtend(cmd.value, *stepper);
 		break;
 	case ERROR:
 		Serial.println("Error, Unrecognized Command");
 		break;
 	}
 }
-
-static void printExec(struct Command cmd) {
-	Operation plsdo = cmd.op;
+*/
+static void printExec( Arm_Command cmd) {
+	Arm_Operation plsdo = cmd.op;
 	switch (plsdo) {
-	case Operation::ROTATE:
+	case Arm_Operation::ROTATE:
 		Serial.println("Command: Rotate");
 		Serial.println("Value: "+cmd.value);
 		Serial.println("");
 		break;
-	case Operation::GRAB:
+	case Arm_Operation::GRAB:
 		Serial.println("Command: Grab");
 		Serial.println("Value: "+cmd.value);
 		Serial.println("");
 		break;
-	case Operation::EXTEND:
+	case Arm_Operation::EXTEND:
 		Serial.println("Command: Extend");
 		Serial.println("Value: "+cmd.value);
 		Serial.println("");
 		break;
-	case Operation::ERROR:
+	case Arm_Operation::ERROR:
 		Serial.println("Command: Error");
 		Serial.println("Value: "+cmd.value);
 		Serial.println("");
 		break;
 	}
+}}
 }
