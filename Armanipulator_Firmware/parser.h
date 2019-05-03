@@ -9,12 +9,12 @@
 class A4988;
 class DRV8825;
 
-typedef enum operation {
+typedef enum Operation {
 	ROTATE, GRAB, EXTEND, ERROR
 };
 
 typedef struct Command {
-	operation op;
+	Operation op;
 	int value;
 };
 
@@ -26,3 +26,4 @@ typedef struct Command {
 static struct Command parse(char*);
 static void determineExec(struct Command cmd, DRV8825 stepper);
 static void determineExec(struct Command cmd, A4988 stepper);
+static void printExec(struct Command cmd);

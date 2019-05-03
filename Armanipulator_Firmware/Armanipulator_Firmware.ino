@@ -1,12 +1,11 @@
 #include "Arduino.h"
 //The setup function is called once at startup of the sketch
-void setup()
-{
-// Add your initialization code here
+#include "parser.h"
+
+void setup(){
+
 }
 
-// The loop function is called in an endless loop
-void loop()
-{
-//Add your repeated code here
+void loop(){
+
 }

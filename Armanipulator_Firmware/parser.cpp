@@ -5,6 +5,10 @@
  * Created: 4/25/2019 2:30:08 PM
  *  Author: FaceF
  */
+//TODO: Optimize for using native AVR-C strings
+//See: https://hackingmajenkoblog.wordpress.com/2016/02/04/the-evils-of-arduino-strings/
+//Possibility, flush buffer after each operation?
+//i.e, Serial.flush(), then invoke some form of garbage collection?
 
 #include "parser.h"
 
@@ -23,19 +27,19 @@ static struct Command parse(String rawinput[]) {
 	//Any commands related to extending the arm will start with an 'e' or 'E', then followed by a double indicating motor rotation. We will assert that the value is between -1 and 1 for now
 	//Any unrecognized letter will return the ERROR enum and 1 as the value. Serial should display an error message, or trigger an exception
 	if (rawinput[0] == 'r' || rawinput[0] == 'R') {
-		out.op = operation::ROTATE;
+		out.op = Operation::ROTATE;
 		//Extract Value from command string
 		out.value = atof(buffer.substring(1, buffer.length() - 1).c_str());
 	} else if (rawinput[0] == 'g' || rawinput[0] == 'G') {
-		out.op = operation::GRAB;
+		out.op = Operation::GRAB;
 		//Extract Value from command string
 		out.value = atof(buffer.substring(1, buffer.length() - 1).c_str());
 	} else if (rawinput[0] == 'e' || rawinput[0] == 'E') {
-		out.op = operation::EXTEND;
+		out.op = Operation::EXTEND;
 		//Extract Value from command string
 		out.value = atof(buffer.substring(1, buffer.length() - 1).c_str());
 	} else {
-		out.op = operation::ERROR;
+		out.op = Operation::ERROR;
 		out.value = 1;
 	}
 	return out;
@@ -43,17 +47,17 @@ static struct Command parse(String rawinput[]) {
 
 //Now we move toward execution
 static void determineExec(struct Command cmd, DRV8825 stepper) {
-	operation cmdop = cmd.op;
+	Operation cmdop = cmd.op;
 	//TODO: Check efficiency of using a switch statement instead of an if/else chain
 	//See Jump Tables and low-level intricacies produced by AVR
 	switch (cmdop) {
-	case operation::ROTATE:
+	case Operation::ROTATE:
 		doRotate(cmd.value, stepper);
 		break;
-	case operation::GRAB:
+	case Operation::GRAB:
 		doGrip(cmd.value, stepper);
 		break;
-	case operation::EXTEND:
+	case Operation::EXTEND:
 		doExtend(cmd.value, stepper);
 		break;
 	case ERROR:
@@ -64,21 +68,47 @@ static void determineExec(struct Command cmd, DRV8825 stepper) {
 }
 
 static void determineExec(struct Command cmd, A4988 stepper) {
-	operation cmdop = cmd.op;
+	Operation cmdop = cmd.op;
 	//TODO: Check efficiency of using a switch statement instead of an if/else chain
 	//See Jump Tables and low-level intricacies produced by AVR
 	switch (cmdop) {
-	case operation::ROTATE:
+	case Operation::ROTATE:
 		doRotate(cmd.value, stepper);
 		break;
-	case operation::GRAB:
+	case Operation::GRAB:
 		doGrip(cmd.value, stepper);
 		break;
-	case operation::EXTEND:
+	case Operation::EXTEND:
 		doExtend(cmd.value, stepper);
 		break;
 	case ERROR:
 		Serial.println("Error, Unrecognized Command");
+		break;
+	}
+}
+
+static void printExec(struct Command cmd) {
+	Operation plsdo = cmd.op;
+	switch (plsdo) {
+	case Operation::ROTATE:
+		Serial.println("Command: Rotate");
+		Serial.println("Value: "+cmd.value);
+		Serial.println("");
+		break;
+	case Operation::GRAB:
+		Serial.println("Command: Grab");
+		Serial.println("Value: "+cmd.value);
+		Serial.println("");
+		break;
+	case Operation::EXTEND:
+		Serial.println("Command: Extend");
+		Serial.println("Value: "+cmd.value);
+		Serial.println("");
+		break;
+	case Operation::ERROR:
+		Serial.println("Command: Error");
+		Serial.println("Value: "+cmd.value);
+		Serial.println("");
 		break;
 	}
 }

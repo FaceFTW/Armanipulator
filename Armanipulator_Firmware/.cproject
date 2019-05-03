@@ -44,11 +44,6 @@
 							<tool id="io.sloeber.tool.size.1138311591" name="Arduino tool Print Size" superClass="io.sloeber.tool.size"/>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="io.sloeber.core.toolChain.release.501407173.1759849357" name="A4988.cpp" rcbsApplicability="disable" resourcePath="StepperDriver/src/A4988.cpp" toolsToInvoke="io.sloeber.tool.sketch.compiler.cpp.79420836.122836312">
-						<tool id="io.sloeber.tool.sketch.compiler.cpp.79420836.122836312" name="Arduino C++ Compiler" superClass="io.sloeber.tool.sketch.compiler.cpp.79420836">
-							<inputType id="io.sloeber.compiler.cpp.sketch.input.1753008789" name="CPP source files" superClass="io.sloeber.compiler.cpp.sketch.input"/>
-						</tool>
-					</fileInfo>
 					<sourceEntries>
 						<entry excluding="libraries/?*/**/?xamples/**|libraries/?*/**/?xtras/**|libraries/?*/**/test*/**|libraries/?*/**/third-party/**|libraries/**/._*|libraries/?*/utility/*/*" flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name=""/>
 					</sourceEntries>
@@ -65,4 +60,10 @@
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/Armanipulator_Firmware"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>
