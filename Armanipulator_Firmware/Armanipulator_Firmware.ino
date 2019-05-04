@@ -10,7 +10,7 @@ void loop(){
 	Serial.println("Testing mode Activated");
 		if(Serial.available() >0){
 			String serialIn = Serial.readString();
-			Parser::Arm_Command cmd = Parser::parseSerial(serialIn);
-			Parser::printExec(cmd);
+			Arm_Command cmd = parseSerial(serialIn);
+			printExec(cmd);
 		}
 }

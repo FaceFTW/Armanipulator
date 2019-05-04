@@ -9,7 +9,6 @@
 //See: https://hackingmajenkoblog.wordpress.com/2016/02/04/the-evils-of-arduino-strings/
 //Possibility, flush buffer after each operation?
 //i.e, Serial.flush(), then invoke some form of garbage collection?
-
 #include "parser.h"
 
 #include <HardwareSerial.h>
@@ -18,11 +17,11 @@
 #include <WString.h>
 
 //#include "exec.h"
-namespace Parser{
-  extern "C"{
-    
+namespace Parser {
+extern "C" {
+
 static Arm_Command parseSerial(String rawinput) {
-	 Arm_Command out;
+	Arm_Command out;
 	String buffer = rawinput;
 
 	//This is what we expect in terms of input
@@ -42,78 +41,84 @@ static Arm_Command parseSerial(String rawinput) {
 		out.op = Arm_Operation::EXTEND;
 		//Extract Value from command string
 		out.value = atof(buffer.substring(1, buffer.length() - 1).c_str());
+	} else if (rawinput.charAt(0) == 'm' || rawinput.charAt(0) == 'M') {
+		out.op = Arm_Operation::MICROSTEPS;
+		//Special Extract Value related to enum
+
 	} else {
+
 		out.op = Arm_Operation::ERROR;
 		out.value = 1;
 	}
 	return out;
 }
 /*
-//Now we move toward execution
-static void determineExec( Command cmd, DRV8825 *stepper) {
-	Operation cmdop = cmd.op;
-	//TODO: Check efficiency of using a switch statement instead of an if/else chain
-	//See Jump Tables and low-level intricacies produced by AVR
-	switch (cmdop) {
-	case Operation::ROTATE:
-		doRotate(cmd.value, stepper);
-		break;
-	case Operation::GRAB:
-		doGrip(cmd.value, stepper);
-		break;
-	case Operation::EXTEND:
-		doExtend(cmd.value, stepper);
-		break;
-	case ERROR:
-		Serial.println("Error, Unrecognized Command");
-		break;
+ //Now we move toward execution
+ static void determineExec( Command cmd, DRV8825 *stepper) {
+ Operation cmdop = cmd.op;
+ //TODO: Check efficiency of using a switch statement instead of an if/else chain
+ //See Jump Tables and low-level intricacies produced by AVR
+ switch (cmdop) {
+ case Operation::ROTATE:
+ doRotate(cmd.value, stepper);
+ break;
+ case Operation::GRAB:
+ doGrip(cmd.value, stepper);
+ break;
+ case Operation::EXTEND:
+ doExtend(cmd.value, stepper);
+ break;
+ case ERROR:
+ Serial.println("Error, Unrecognized Command");
+ break;
 
-	}
-}
+ }
+ }
 
-static void determineExec( Command cmd, A4988 *stepper) {
-	Operation cmdop = cmd.op;
-	//TODO: Check efficiency of using a switch statement instead of an if/else chain
-	//See Jump Tables and low-level intricacies produced by AVR
-	switch (cmdop) {
-	case Operation::ROTATE:
-		doRotate(cmd.value, *stepper);
-		break;
-	case Operation::GRAB:
-		doGrip(cmd.value, *stepper);
-		break;
-	case Operation::EXTEND:
-		doExtend(cmd.value, *stepper);
-		break;
-	case ERROR:
-		Serial.println("Error, Unrecognized Command");
-		break;
-	}
-}
-*/
-static void printExec( Arm_Command cmd) {
+ static void determineExec( Command cmd, A4988 *stepper) {
+ Operation cmdop = cmd.op;
+ //TODO: Check efficiency of using a switch statement instead of an if/else chain
+ //See Jump Tables and low-level intricacies produced by AVR
+ switch (cmdop) {
+ case Operation::ROTATE:
+ doRotate(cmd.value, *stepper);
+ break;
+ case Operation::GRAB:
+ doGrip(cmd.value, *stepper);
+ break;
+ case Operation::EXTEND:
+ doExtend(cmd.value, *stepper);
+ break;
+ case ERROR:
+ Serial.println("Error, Unrecognized Command");
+ break;
+ }
+ }
+ */
+static void printExec(Arm_Command cmd) {
 	Arm_Operation plsdo = cmd.op;
 	switch (plsdo) {
 	case Arm_Operation::ROTATE:
 		Serial.println("Command: Rotate");
-		Serial.println("Value: "+cmd.value);
+		Serial.println("Value: " + cmd.value);
 		Serial.println("");
 		break;
 	case Arm_Operation::GRAB:
 		Serial.println("Command: Grab");
-		Serial.println("Value: "+cmd.value);
+		Serial.println("Value: " + cmd.value);
 		Serial.println("");
 		break;
 	case Arm_Operation::EXTEND:
 		Serial.println("Command: Extend");
-		Serial.println("Value: "+cmd.value);
+		Serial.println("Value: " + cmd.value);
 		Serial.println("");
 		break;
 	case Arm_Operation::ERROR:
 		Serial.println("Command: Error");
-		Serial.println("Value: "+cmd.value);
+		Serial.println("Value: " + cmd.value);
 		Serial.println("");
 		break;
 	}
-}}
+}
+}
 }

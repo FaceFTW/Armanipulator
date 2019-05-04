@@ -13,10 +13,18 @@ class A4988;
 class DRV8825;
 namespace Parser{
 typedef enum  {
-	ROTATE, GRAB, EXTEND, ERROR
+	ROTATE, GRAB, EXTEND, MICROSTEPS, ERROR
 }Arm_Operation;
 
-typedef struct  {
+typedef enum{
+	HALF,			//value = 1
+	QUARTER,	 	//value = 2
+	EIGTH, 			//value = 3
+	SIXTEENTH, 		//value = 4
+	THIRTY_SECOND	//value = 5
+}Microsteps;
+
+typedef struct arm_command  {
 	Arm_Operation op;
 	int value;
 }Arm_Command;

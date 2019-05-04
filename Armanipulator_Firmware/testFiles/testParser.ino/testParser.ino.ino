@@ -4,7 +4,7 @@ typedef enum  {
 
 typedef struct  {
   Arm_Operation op;
-  int value;
+  double value;
 }Arm_Command;
 void setup() {
   Serial.begin(115200);
@@ -35,15 +35,15 @@ static Arm_Command parseSerial(String rawinput) {
   if (rawinput.charAt(0) == 'r' || rawinput.charAt(0) == 'R') {
     out.op = Arm_Operation::ROTATE;
     //Extract Value from command string
-    out.value = atof(buffer.substring(1, buffer.length() - 1).c_str());
+    out.value = atof(buffer.substring(1, buffer.length()).c_str());
   } else if (rawinput.charAt(0) == 'g' || rawinput.charAt(0) == 'G') {
     out.op = Arm_Operation::GRAB;
     //Extract Value from command string
-    out.value = atof(buffer.substring(1, buffer.length() - 1).c_str());
+    out.value = atof(buffer.substring(1, buffer.length()).c_str());
   } else if (rawinput.charAt(0) == 'e' || rawinput.charAt(0) == 'E') {
     out.op = Arm_Operation::EXTEND;
     //Extract Value from command string
-    out.value = atof(buffer.substring(1, buffer.length() - 1).c_str());
+    out.value = atof(buffer.substring(1, buffer.length()).c_str());
   } else {
     out.op = Arm_Operation::ERROR;
     out.value = 1;
