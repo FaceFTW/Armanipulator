@@ -1,5 +1,5 @@
 #include "parser.h"
-using namespace Parser;
+#include "Arduino.h"
 void setup(){
 	Serial.begin(115200);
 	Serial.println("Success");
@@ -10,7 +10,7 @@ void loop(){
 	Serial.println("Testing mode Activated");
 		if(Serial.available() >0){
 			String serialIn = Serial.readString();
-			Arm_Command cmd = parseSerial(serialIn);
-			printExec(cmd);
+			Parser::Arm_Command cmd = Parser::parseSerial(serialIn);
+			Parser::printExec(cmd);
 		}
 }
