@@ -19,12 +19,9 @@
 #include "exec.h"
 
 
-	typedef struct arm_command {
-		Parser::Arm_Operation op;
-		int value;
-	} Arm_Command;
 
-	static Parser::Arm_Command& parseSerial(String rawinput) {
+
+	static Parser::Arm_Command Parser::parseSerial(String rawinput) {
 		Arm_Command* out = new Arm_Command();
 		String buffer = rawinput;
 
@@ -36,15 +33,15 @@
 		if (rawinput.charAt(0) == 'r' || rawinput.charAt(0) == 'R') {
 			out->op = Parser::Arm_Operation::ROTATE;
 			//Extract Value from command string
-			out->value = atof(buffer.substring(1, buffer.length() - 1).c_str());
+			out->value = atof(buffer.substring(1, buffer.length() ).c_str());
 		} else if (rawinput.charAt(0) == 'g' || rawinput.charAt(0) == 'G') {
 			out->op = Parser::Arm_Operation::GRAB;
 			//Extract Value from command string
-			out->value = atof(buffer.substring(1, buffer.length() - 1).c_str());
+			out->value = atof(buffer.substring(1, buffer.length() ).c_str());
 		} else if (rawinput.charAt(0) == 'e' || rawinput.charAt(0) == 'E') {
 			out->op = Parser::Arm_Operation::EXTEND;
 			//Extract Value from command string
-			out->value = atof(buffer.substring(1, buffer.length() - 1).c_str());
+			out->value = atof(buffer.substring(1, buffer.length() ).c_str());
 		} else if (rawinput.charAt(0) == 'm' || rawinput.charAt(0) == 'M') {
 			out->op = Parser::Arm_Operation::MICROSTEPS;
 			//Special Extract Value related to enum
@@ -54,11 +51,12 @@
 			out->op = Parser::Arm_Operation::ERROR;
 			out->value = 1;
 		}
-		return *out;
+		return* out;
 	}
 
+	/*
 	//Now we move toward execution
-	static void determineExec(Parser::Arm_Command cmd, DRV8825 stepper) {
+	static void Parser::determineExec(Parser::Arm_Command cmd, DRV8825 stepper) {
 		Parser::Arm_Operation cmdop = cmd.op;
 		//TODO: Check efficiency of using a switch statement instead of an if/else chain
 		//See Jump Tables and low-level intricacies produced by AVR
@@ -78,7 +76,7 @@
 		}
 	}
 
-	static void determineExec(Parser::Arm_Command cmd, A4988 *stepper) {
+	static void Parser;:determineExec(Parser::Arm_Command cmd, A4988 *stepper) {
 		Parser::Arm_Operation cmdop = cmd.op;
 		//TODO: Check efficiency of using a switch statement instead of an if/else chain
 		//See Jump Tables and low-level intricacies produced by AVR
@@ -97,28 +95,28 @@
 			break;
 		}
 	}
-
-	static void printExec(Parser::Arm_Command cmd) {
+*/
+	static void Parser::printExec(Parser::Arm_Command cmd) {
 		Parser::Arm_Operation plsdo = cmd.op;
 		switch (plsdo) {
 		case Parser::Arm_Operation::ROTATE:
 			Serial.println("Command: Rotate");
-			Serial.println("Value: " + cmd.value);
+			Serial.println("Value: " + String(cmd.value));
 			Serial.println("");
 			break;
 		case Parser::Arm_Operation::GRAB:
 			Serial.println("Command: Grab");
-			Serial.println("Value: " + cmd.value);
+			Serial.println("Value: " + String(cmd.value));
 			Serial.println("");
 			break;
 		case Parser::Arm_Operation::EXTEND:
 			Serial.println("Command: Extend");
-			Serial.println("Value: " + cmd.value);
+			Serial.println("Value: " + String(cmd.value));
 			Serial.println("");
 			break;
 		case Parser::Arm_Operation::ERROR:
 			Serial.println("Command: Error");
-			Serial.println("Value: " + cmd.value);
+			Serial.println("Value: " + String(cmd.value));
 			Serial.println("");
 			break;
 		}

@@ -24,7 +24,10 @@ public:
 		SIXTEENTH, 		//value = 4
 		THIRTY_SECOND	//value = 5
 	} Microsteps;
-	typedef struct arm_command Arm_Command;
+	typedef struct arm_command {
+		Parser::Arm_Operation op;
+		double value;
+	} Arm_Command;
 
 	/**
 	 * \fn
@@ -32,8 +35,8 @@ public:
 	 *
 	 */
 	static Arm_Command parseSerial(String rawinput);
-	static void determineExec(Arm_Command cmd, DRV8825 *stepper);
-	static void determineExec(Arm_Command cmd, A4988 *stepper);
+	//static void determineExec(Arm_Command cmd, DRV8825 *stepper);
+	//static void determineExec(Arm_Command cmd, A4988 *stepper);
 	static void printExec(Arm_Command cmd);
 };
 
