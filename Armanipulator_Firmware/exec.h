@@ -10,11 +10,12 @@
 class A4988;
 class DRV8825;
 
-typedef enum Parser::Microsteps Microsteps;
+
 
 #ifndef EXEC_H_
 #define EXEC_H_
 class Exec{
+public:
 	//Rotate Execs
 	static void doRotate(int rotVal, DRV8825 stepper);
 	static void doRotate(int rotVal, A4988 stepper);
@@ -29,8 +30,8 @@ class Exec{
 
 	//Microstep Execs
 	//TODO  A4988 does not support all microstep ratios that the DRV8825 supports
-	static void changeMicrosteps(enum Microsteps steps, A4988 stepper);
-	static void changeMicrosteps(enum Microsteps steps, DRV8825 stepper);
+	static void changeMicrosteps(Parser::Microsteps steps, A4988 stepper);
+	static void changeMicrosteps(Parser::Microsteps steps, DRV8825 stepper);
 
 
 };

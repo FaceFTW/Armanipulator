@@ -5,7 +5,7 @@
  * Created: 4/26/2019 12:32:51 AM
  *  Author: Alex Westerman
  */
-
+#pragma once
 #include <WString.h>
 #ifndef PARSER_H
 #define PARSER_H

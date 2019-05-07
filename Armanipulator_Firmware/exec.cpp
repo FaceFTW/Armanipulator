@@ -1,7 +1,7 @@
 #include "StepperDriver/src/DRV8825.h"
 
 	//TODO: Add calculation relative to current microstep config
-
+class Exec{
 	//Rotate Execs
 	static void doRotate(int rotVal, DRV8825 stepper){
 		stepper.move(rotVal);
@@ -29,3 +29,4 @@
 	static void doExtend(int extendVal, A4988 stepper){
 		stepper.move(extendVal);
 	}
+};
