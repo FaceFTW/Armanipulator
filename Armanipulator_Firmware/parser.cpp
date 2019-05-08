@@ -18,7 +18,7 @@
 
 #include "exec.h"
 
-
+class Exec;
 
 
 	static Parser::Arm_Command Parser::parseSerial(String rawinput) {
@@ -54,7 +54,7 @@
 		return* out;
 	}
 
-	/*
+
 	//Now we move toward execution
 	static void Parser::determineExec(Parser::Arm_Command cmd, DRV8825 stepper) {
 		Parser::Arm_Operation cmdop = cmd.op;
@@ -76,26 +76,26 @@
 		}
 	}
 
-	static void Parser;:determineExec(Parser::Arm_Command cmd, A4988 *stepper) {
+	static void Parser::determineExec(Parser::Arm_Command cmd, A4988 stepper) {
 		Parser::Arm_Operation cmdop = cmd.op;
 		//TODO: Check efficiency of using a switch statement instead of an if/else chain
 		//See Jump Tables and low-level intricacies produced by AVR
 		switch (cmdop) {
 		case Parser::Arm_Operation::ROTATE:
-			Exec::doRotate(cmd.value, *stepper);
+			Exec::doRotate(cmd.value, stepper);
 			break;
 		case Parser::Arm_Operation::GRAB:
-			Exec::doGrip(cmd.value, *stepper);
+			Exec::doGrip(cmd.value, stepper);
 			break;
 		case Parser::Arm_Operation::EXTEND:
-			Exec::doExtend(cmd.value, *stepper);
+			Exec::doExtend(cmd.value, stepper);
 			break;
 		case Parser::Arm_Operation::ERROR:
 			Serial.println("Error, Unrecognized Command");
 			break;
 		}
 	}
-*/
+
 	static void Parser::printExec(Parser::Arm_Command cmd) {
 		Parser::Arm_Operation plsdo = cmd.op;
 		switch (plsdo) {
@@ -113,6 +113,9 @@
 			Serial.println("Command: Extend");
 			Serial.println("Value: " + String(cmd.value));
 			Serial.println("");
+			break;
+		case Parser::Arm_Operation::MICROSTEPS:
+			//Microsteps should be parsed diffenrently
 			break;
 		case Parser::Arm_Operation::ERROR:
 			Serial.println("Command: Error");

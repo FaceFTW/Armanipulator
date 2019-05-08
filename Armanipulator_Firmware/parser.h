@@ -35,8 +35,8 @@ public:
 	 *
 	 */
 	static Arm_Command parseSerial(String rawinput);
-	//static void determineExec(Arm_Command cmd, DRV8825 *stepper);
-	//static void determineExec(Arm_Command cmd, A4988 *stepper);
+	static void determineExec(Arm_Command cmd, DRV8825 stepper);
+	static void determineExec(Arm_Command cmd, A4988 stepper);
 	static void printExec(Arm_Command cmd);
 };
 
