@@ -23,8 +23,8 @@ public:
 	}
 */
 	//Extend Execs
-	static void doExtend(double extendVal, BasicStepperDriver& stepper) {
-		stepper.move(extendVal);
+	static void doExtend(double extendVal, BasicStepperDriver* stepper) {
+		stepper->move(extendVal);
 	}
 /*
 	static void doExtend(double extendVal, A4988& stepper) {

@@ -36,7 +36,7 @@ public:
 	 *
 	 */
 	static Arm_Command parseSerial(String rawinput);
-	static void determineExec(Arm_Command cmd, BasicStepperDriver stepper[]);
+	static void determineExec(Arm_Command cmd, BasicStepperDriver** stepper[]);
 	//static void determineExec(Arm_Command cmd, A4988 stepper);
 	static void printExec(Arm_Command cmd);
 };

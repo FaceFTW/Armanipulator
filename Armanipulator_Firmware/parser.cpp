@@ -56,16 +56,16 @@ class Exec;
 
 
 	//Now we move toward execution
-	static void Parser::determineExec(Parser::Arm_Command cmd, BasicStepperDriver* stepper[]) {
+	static void Parser::determineExec(Parser::Arm_Command cmd, BasicStepperDriver** stepper[]) {
 		Parser::Arm_Operation cmdop = cmd.op;
 		//TODO: Check efficiency of using a switch statement instead of an if/else chain
 		//See Jump Tables and low-level intricacies produced by AVR
 		switch (cmdop) {
 		case Parser::Arm_Operation::ROTATE:
-			Exec::doRotate(cmd.value, &stepper[0]);
+			Exec::doRotate(cmd.value,*(stepper)-stepper[0]);
 			break;
 		case Parser::Arm_Operation::GRAB:
-			Exec::doGrip(cmd.value, stepper[1]);
+			Exec::doGrip(cmd.value,*(stepper+1)-stepper[1]);
 			break;
 		case Parser::Arm_Operation::EXTEND:
 			//Exec::doExtend(cmd.value, stepper);
