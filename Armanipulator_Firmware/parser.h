@@ -9,8 +9,9 @@
 #include <WString.h>
 #ifndef PARSER_H
 #define PARSER_H
-class A4988;
-class DRV8825;
+//class A4988;
+//class DRV8825;
+#include "StepperDriver/src/BasicStepperDriver.h"
 
 class Parser {
 public:
@@ -35,8 +36,8 @@ public:
 	 *
 	 */
 	static Arm_Command parseSerial(String rawinput);
-	static void determineExec(Arm_Command cmd, DRV8825 stepper);
-	static void determineExec(Arm_Command cmd, A4988 stepper);
+	static void determineExec(Arm_Command cmd, BasicStepperDriver stepper[]);
+	//static void determineExec(Arm_Command cmd, A4988 stepper);
 	static void printExec(Arm_Command cmd);
 };
 
