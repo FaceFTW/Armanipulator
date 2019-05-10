@@ -9,7 +9,8 @@
 BasicStepperDriver wrist(MotorConfig::MOTOR_STEPS,Pinout::WRIST_ROT_DIR,Pinout::WRIST_ROT_STEP);
 BasicStepperDriver grip(MotorConfig::MOTOR_STEPS,Pinout::GRIP_DIR,Pinout::GRIP_STEP);
 BasicStepperDriver motorlist[] = {wrist,grip};
-BasicStepperDriver *motorPointer[2] = {&motorlist[0], &motorlist[1]};
+BasicStepperDriver* motorPointer[] = {&wrist, &grip};
+
 void setup() {
 	Serial.begin(115200);
 	Serial.println("Success");
