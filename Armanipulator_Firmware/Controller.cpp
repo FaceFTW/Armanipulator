@@ -10,10 +10,10 @@
 #include "cpu_map.h"
 
 //Vars (or are they?)
-BasicStepperDriver rotateDriver;
-BasicStepperDriver grabDriver;
-BasicStepperDriver extendDriver;
-Controller::Arm_Command currentCmd;
+BasicStepperDriver* rotateDriver;
+BasicStepperDriver* grabDriver;
+BasicStepperDriver* extendDriver;
+Controller::Arm_Command CurrentCmd = {Controller::Arm_Operation::ERROR ,1};
 
 //Bob the builder
 Controller::Controller() {
@@ -21,15 +21,13 @@ Controller::Controller() {
 	initMotors();
 
 	//Init the struct as an error struct (If executeCMD is called before parseSerial, error is returned intentionally)
-	currentCmd = {Controller::Arm_Operation::ERROR, 1};
+	currentCmd.op = Controller::Arm_Operation::ERROR;
+	currentCmd.value = 1;
 }
 
 //DESTROY THE CHILD. CORRUPT THEM ALL
 Controller::~Controller() {
-	delete currentCmd;
-	delete rotateDriver;
-	delete grabDriver;
-	delete extendDriver;
+
 }
 
 //Getters and Setters
@@ -49,9 +47,9 @@ void initMotors() {
 	extendDriver =  new BasicStepperDriver(MotorConfig::MOTOR_STEPS, Pinout::EXTEND_DIR, Pinout::EXTEND_STEP);
 
 	//Start the motors
-	rotateDriver.begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
-	grabDriver.begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
-	extendDriver.begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
+	rotateDriver->begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
+	grabDriver->begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
+	extendDriver->begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
 }
 
 void Controller::parseSerial(String rawinput) {
@@ -117,18 +115,18 @@ static void Controller::printExec(Controller::Arm_Command cmd) {
 
 //Execute Order 66
 void executeCmd(){
-	Controller::Arm_Operation cmdop = currentCmd.op;
+	Controller::Arm_Operation cmdop = currentCmd->op;
 	//TODO: Check efficiency of using a switch statement instead of an if/else chain
 	//See Jump Tables and low-level intricacies produced by AVR
 	switch (cmdop) {
 	case Controller::Arm_Operation::ROTATE:
-		rotateDriver.move(currentCmd.value);
+		rotateDriver->move(currentCmd->value);
 		break;
 	case Controller::Arm_Operation::GRAB:
-		grabDriver.move(currentCmd.value);
+		grabDriver->move(currentCmd->value);
 		break;
 	case Controller::Arm_Operation::EXTEND:
-		extendDriver.move(currentCmd.value);
+		extendDriver->move(currentCmd->value);
 		break;
 	case Controller::Arm_Operation::ERROR:
 		Serial.println("Error, Unrecognized Command");

@@ -60,9 +60,9 @@ public:
 	//Private Vars
 private:
 	Arm_Command currentCmd;
-	BasicStepperDriver rotateDriver;
-	BasicStepperDriver grabDriver;
-	BasicStepperDriver extendDriver;
+	BasicStepperDriver* rotateDriver;
+	BasicStepperDriver* grabDriver;
+	BasicStepperDriver* extendDriver;
 };
 
 #endif /* CONTROLLER_H_ */
