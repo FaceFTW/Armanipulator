@@ -20,11 +20,23 @@ Controller::Controller() {
 	//Init the motors
 	initMotors();
 
+	//Init the struct as an error struct (If executeCMD is called before parseSerial, error is returned intentionally)
+	currentCmd = {Controller::Arm_Operation::ERROR, 1};
 }
 
 //DESTROY THE CHILD. CORRUPT THEM ALL
 Controller::~Controller() {
 	// TODO Auto-generated destructor stub
+}
+
+//Getters and Setters
+//Arm_Command
+Controller::Arm_Command Controller::getCommand(){
+	return currentCmd;
+}
+
+void Controller::setCommand(Controller::Arm_Command cmd){
+	currentCmd = cmd;
 }
 
 void initMotors() {
@@ -34,9 +46,9 @@ void initMotors() {
 	extendDriver =  new BasicStepperDriver(MotorConfig::MOTOR_STEPS, Pinout::EXTEND_DIR, Pinout::EXTEND_STEP);
 
 	//Start the motors
-	rotateDriver.begin();
-	grabDriver.begin();
-	extendDriver.begin();
+	rotateDriver.begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
+	grabDriver.begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
+	extendDriver.begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
 }
 
 void Controller::parseSerial(String rawinput) {
@@ -99,3 +111,24 @@ static void Controller::printExec(Controller::Arm_Command cmd) {
 		break;
 	}
 }
+
+//Execute Order 66
+void executeCmd(){
+	Controller::Arm_Operation cmdop = currentCmd.op;
+	//TODO: Check efficiency of using a switch statement instead of an if/else chain
+	//See Jump Tables and low-level intricacies produced by AVR
+	switch (cmdop) {
+	case Controller::Arm_Operation::ROTATE:
+		rotateDriver.move(currentCmd.value);
+		break;
+	case Controller::Arm_Operation::GRAB:
+		grabDriver.move(currentCmd.value);
+		break;
+	case Controller::Arm_Operation::EXTEND:
+		extendDriver.move(currentCmd.value);
+		break;
+	case Controller::Arm_Operation::ERROR:
+		Serial.println("Error, Unrecognized Command");
+		break;
+
+	}

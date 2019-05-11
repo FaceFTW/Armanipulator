@@ -42,11 +42,13 @@ public:
 
 	//Parser Related Methods
 	void parseSerial(String rawinput);
-	void determineExec(Arm_Command cmd);
 	void printExec(Arm_Command cmd);
 
 	//Motor Init
 	void initMotors();
+
+	//Do stuff methods
+	void executeCmd();
 
 	//Getter & Setter for variables
 	//Arm_Command cmd
