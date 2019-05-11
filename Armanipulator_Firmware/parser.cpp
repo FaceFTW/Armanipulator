@@ -12,13 +12,9 @@
 #include "parser.h"
 
 #include <HardwareSerial.h>
-#include "StepperDriver/src/A4988.h"
-#include "StepperDriver/src/DRV8825.h"
-#include <WString.h>
+#include <stdlib.h>
 
-#include "execute.h"
 
-class Execute;
 
 
 	static Parser::Arm_Command Parser::parseSerial(String rawinput) {
@@ -62,10 +58,10 @@ class Execute;
 		//See Jump Tables and low-level intricacies produced by AVR
 		switch (cmdop) {
 		case Parser::Arm_Operation::ROTATE:
-			Execute::doRotate(cmd.value, stepper[0]);
+			//doRotate(cmd.value, stepper[0]);
 			break;
 		case Parser::Arm_Operation::GRAB:
-			Execute::doGrip(cmd.value, stepper[1]);
+			//doGrip(cmd.value, stepper[1]);
 			break;
 		case Parser::Arm_Operation::EXTEND:
 			//Exec::doExtend(cmd.value, stepper);
