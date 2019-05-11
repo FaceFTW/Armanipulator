@@ -26,7 +26,10 @@ Controller::Controller() {
 
 //DESTROY THE CHILD. CORRUPT THEM ALL
 Controller::~Controller() {
-	// TODO Auto-generated destructor stub
+	delete currentCmd;
+	delete rotateDriver;
+	delete grabDriver;
+	delete extendDriver;
 }
 
 //Getters and Setters
@@ -132,3 +135,4 @@ void executeCmd(){
 		break;
 
 	}
+}

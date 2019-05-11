@@ -42,7 +42,7 @@ public:
 
 	//Parser Related Methods
 	void parseSerial(String rawinput);
-	void printExec(Arm_Command cmd);
+	static void printExec(Arm_Command cmd);
 
 	//Motor Init
 	void initMotors();
@@ -61,8 +61,8 @@ public:
 private:
 	Arm_Command currentCmd;
 	BasicStepperDriver rotateDriver;
-	BasicStepperDriver grabDriver();
-	BasicStepperDriver extendDriver();
+	BasicStepperDriver grabDriver;
+	BasicStepperDriver extendDriver;
 };
 
 #endif /* CONTROLLER_H_ */
