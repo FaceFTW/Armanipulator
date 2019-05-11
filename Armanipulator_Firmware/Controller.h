@@ -9,7 +9,11 @@
 #define CONTROLLER_H_
 
 //Includes
-#include "Wstring.h"		//Arduino String Library (because C strings are not fun)
+
+#include <WString.h>		//Arduino String Library (because C strings are not fun)
+
+#include "StepperDriver/src/BasicStepperDriver.h"
+#include "cpu_map.h"
 
 class Controller {
 
@@ -37,9 +41,26 @@ public:
 	virtual ~Controller();
 
 	//Parser Related Methods
-	static Arm_Command parseSerial(String rawinput);
-	static void determineExec(Arm_Command cmd);
-	static void printExec(Arm_Command cmd);
+	void parseSerial(String rawinput);
+	void determineExec(Arm_Command cmd);
+	void printExec(Arm_Command cmd);
+
+	//Motor Init
+	void initMotors();
+
+	//Getter & Setter for variables
+	//Arm_Command cmd
+	Arm_Command getCommand();
+	void setCommand(Arm_Command cmd);
+
+
+
+	//Private Vars
+private:
+	Arm_Command currentCmd;
+	BasicStepperDriver rotateDriver;
+	BasicStepperDriver grabDriver();
+	BasicStepperDriver extendDriver();
 };
 
 #endif /* CONTROLLER_H_ */
