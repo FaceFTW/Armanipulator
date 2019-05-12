@@ -62,29 +62,21 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_controller-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Controller Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>The class-object used to interface between the serial interface and.  
+<p>The class-object used to interface between the serial interface and the stepper motor drivers.  
  <a href="class_controller.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_controller_8h_source.html">Controller.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for Controller:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_controller__coll__graph.png" border="0" usemap="#_controller_coll__map" alt="Collaboration graph"/></div>
-<map name="_controller_coll__map" id="_controller_coll__map">
-<area shape="rect" id="node2" href="struct_controller_1_1arm__command.html" title="Controller::arm_command" alt="" coords="5,5,176,32"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_controller_1_1arm__command.html">arm_command</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure used to define the overall instruction parsed from serial input.  <a href="struct_controller_1_1arm__command.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -110,74 +102,59 @@ Public Types</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:aa94f1aea40982c422a43c1ee5aea0c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab45ad0d63abd4b57021f13810fc856d3"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="class_controller.html#aa94f1aea40982c422a43c1ee5aea0c49">Controller::microsteps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ab45ad0d63abd4b57021f13810fc856d3">Microsteps</a></td></tr>
-<tr class="memdesc:ab45ad0d63abd4b57021f13810fc856d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to placehold common Microstep configs for the motor drivers.  <a href="#ab45ad0d63abd4b57021f13810fc856d3">More...</a><br /></td></tr>
+<tr class="memitem:ab45ad0d63abd4b57021f13810fc856d3"><td class="memItemLeft" align="right" valign="top"><a id="ab45ad0d63abd4b57021f13810fc856d3"></a>
+typedef enum <a class="el" href="class_controller.html#aa94f1aea40982c422a43c1ee5aea0c49">Controller::microsteps</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ab45ad0d63abd4b57021f13810fc856d3">Microsteps</a></td></tr>
+<tr class="memdesc:ab45ad0d63abd4b57021f13810fc856d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to placehold common Microstep configs for the motor drivers. <br /></td></tr>
 <tr class="separator:ab45ad0d63abd4b57021f13810fc856d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b06b7601d97a4d4bb4071938df87076"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_controller_1_1arm__command.html">Controller::arm_command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a1b06b7601d97a4d4bb4071938df87076">Arm_Command</a></td></tr>
-<tr class="separator:a1b06b7601d97a4d4bb4071938df87076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac48cc99091f83f149fef8f17fd5d7e7f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_controller_1_1arm__command.html">Controller::arm_command</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ac48cc99091f83f149fef8f17fd5d7e7f">Arm_Command</a></td></tr>
+<tr class="memdesc:ac48cc99091f83f149fef8f17fd5d7e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for the Arm_Command Struct to allow easy definition.  <a href="#ac48cc99091f83f149fef8f17fd5d7e7f">More...</a><br /></td></tr>
+<tr class="separator:ac48cc99091f83f149fef8f17fd5d7e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a95c56822d667e94b031451729ce069a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a95c56822d667e94b031451729ce069a9">Controller</a> ()</td></tr>
+<tr class="memitem:a95c56822d667e94b031451729ce069a9"><td class="memItemLeft" align="right" valign="top"><a id="a95c56822d667e94b031451729ce069a9"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a95c56822d667e94b031451729ce069a9">Controller</a> ()</td></tr>
+<tr class="memdesc:a95c56822d667e94b031451729ce069a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the controller object In this constructor, the motors are created on the heap, and then the motor pointer vars now point to the motors on the heap. currentCmd is not initialized, because it does not need to be pointed to at the minute. <br /></td></tr>
 <tr class="separator:a95c56822d667e94b031451729ce069a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ab87934c4f7a266cfdb86e0f36bc1b5"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">~Controller</a> ()</td></tr>
+<tr class="memitem:a0ab87934c4f7a266cfdb86e0f36bc1b5"><td class="memItemLeft" align="right" valign="top"><a id="a0ab87934c4f7a266cfdb86e0f36bc1b5"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">~Controller</a> ()</td></tr>
+<tr class="memdesc:a0ab87934c4f7a266cfdb86e0f36bc1b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for the controller object Has no purpose, therefore does nothing. <br /></td></tr>
 <tr class="separator:a0ab87934c4f7a266cfdb86e0f36bc1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab539c04f3472ce35d99947d145f95b4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ab539c04f3472ce35d99947d145f95b4b">parseSerial</a> (String rawinput)</td></tr>
-<tr class="separator:ab539c04f3472ce35d99947d145f95b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a658aa1846a4b44a9f79578ee017a1116"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a658aa1846a4b44a9f79578ee017a1116">printExec</a> ()</td></tr>
-<tr class="separator:a658aa1846a4b44a9f79578ee017a1116"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02671eb16452b74848f56f954d8dde1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a02671eb16452b74848f56f954d8dde1a">initMotors</a> ()</td></tr>
-<tr class="separator:a02671eb16452b74848f56f954d8dde1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70a36b927bb2df8febae95ed3cb50d63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a70a36b927bb2df8febae95ed3cb50d63">executeCmd</a> ()</td></tr>
-<tr class="separator:a70a36b927bb2df8febae95ed3cb50d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf8bd1fc8842fa7a5544af219adf414c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_controller.html#a1b06b7601d97a4d4bb4071938df87076">Arm_Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#aaf8bd1fc8842fa7a5544af219adf414c">getCommand</a> ()</td></tr>
-<tr class="separator:aaf8bd1fc8842fa7a5544af219adf414c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59b53351b9037c5cd186e9d32ca37baa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a59b53351b9037c5cd186e9d32ca37baa">setCommand</a> (<a class="el" href="class_controller.html#a1b06b7601d97a4d4bb4071938df87076">Arm_Command</a> *cmd)</td></tr>
-<tr class="separator:a59b53351b9037c5cd186e9d32ca37baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a809d8cb0ecbccb5740b8f72bbed8dd32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_controller.html#a1b06b7601d97a4d4bb4071938df87076">Arm_Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a809d8cb0ecbccb5740b8f72bbed8dd32">currentCmd</a></td></tr>
-<tr class="separator:a809d8cb0ecbccb5740b8f72bbed8dd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5678454b560873dfb3197609f1e86199"><td class="memItemLeft" align="right" valign="top">BasicStepperDriver *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a5678454b560873dfb3197609f1e86199">rotateDriver</a></td></tr>
-<tr class="separator:a5678454b560873dfb3197609f1e86199"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac48c7b82c23ccff1ffe3ba34225aff41"><td class="memItemLeft" align="right" valign="top">BasicStepperDriver *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ac48c7b82c23ccff1ffe3ba34225aff41">grabDriver</a></td></tr>
-<tr class="separator:ac48c7b82c23ccff1ffe3ba34225aff41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a269efb6c442129f6f5f9aca4450d2258"><td class="memItemLeft" align="right" valign="top">BasicStepperDriver *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a269efb6c442129f6f5f9aca4450d2258">extendDriver</a></td></tr>
-<tr class="separator:a269efb6c442129f6f5f9aca4450d2258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7583687bca402756ed9a4a8dc2e29ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ad7583687bca402756ed9a4a8dc2e29ee">parseSerial</a> (String rawinput)</td></tr>
+<tr class="memdesc:ad7583687bca402756ed9a4a8dc2e29ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates Serial or Other Input into an Arm_Command struct object This function will take the string input, and then parse based on the first character of the string. Parsing goes as follows: -Any commands related to rotation will start with an 'r' or 'R', then followed by a double indicating revolutions -Any commands related to gripping will start with a 'g' or 'G', then followed by a 0 or 1. Other values will trigger an exception -Any commands related to extending the arm will start with an 'e' or 'E', then followed by a double indicating motor rotation. We will assert that the value is between -1 and 1 for now -Any unrecognized letter will return the ERROR enum and 1 as the value. Serial should display an error message, or trigger an exception Once the command is selected, the remaining value is parsed as a double, and then pointed to in the Arm_Command Pointer.  <a href="#ad7583687bca402756ed9a4a8dc2e29ee">More...</a><br /></td></tr>
+<tr class="separator:ad7583687bca402756ed9a4a8dc2e29ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ad1d152a91997ab3825f32d2dcecfd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a8ad1d152a91997ab3825f32d2dcecfd4">printExec</a> ()</td></tr>
+<tr class="memdesc:a8ad1d152a91997ab3825f32d2dcecfd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug Function to test the parser Prints output in the serial connection based on the values in currentCmd.  <a href="#a8ad1d152a91997ab3825f32d2dcecfd4">More...</a><br /></td></tr>
+<tr class="separator:a8ad1d152a91997ab3825f32d2dcecfd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1fc6cd2f507cc05e66a602e809c2446"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#ac1fc6cd2f507cc05e66a602e809c2446">executeCmd</a> ()</td></tr>
+<tr class="memdesc:ac1fc6cd2f507cc05e66a602e809c2446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs Commands based on data pointed to by currentCmd Uses the parsing rules defined by parseSerial and then do the respective action.  <a href="#ac1fc6cd2f507cc05e66a602e809c2446">More...</a><br /></td></tr>
+<tr class="separator:ac1fc6cd2f507cc05e66a602e809c2446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af746c7701fda226720efe02890a308b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_controller.html#ac48cc99091f83f149fef8f17fd5d7e7f">Arm_Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#af746c7701fda226720efe02890a308b2">getCommand</a> ()</td></tr>
+<tr class="memdesc:af746c7701fda226720efe02890a308b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter method for the currentCmd pointer.  <a href="#af746c7701fda226720efe02890a308b2">More...</a><br /></td></tr>
+<tr class="separator:af746c7701fda226720efe02890a308b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a951ce5ec5a6e653e9dd78b36351d80c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller.html#a951ce5ec5a6e653e9dd78b36351d80c5">setCommand</a> (<a class="el" href="class_controller.html#ac48cc99091f83f149fef8f17fd5d7e7f">Arm_Command</a> *cmd)</td></tr>
+<tr class="memdesc:a951ce5ec5a6e653e9dd78b36351d80c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter method for the currentCmd pointer.  <a href="#a951ce5ec5a6e653e9dd78b36351d80c5">More...</a><br /></td></tr>
+<tr class="separator:a951ce5ec5a6e653e9dd78b36351d80c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The class-object used to interface between the serial interface and. </p>
+<div class="textblock"><p>The class-object used to interface between the serial interface and the stepper motor drivers. </p>
 
 <p class="definition">Definition at line <a class="el" href="_controller_8h_source.html#l00020">20</a> of file <a class="el" href="_controller_8h_source.html">Controller.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a1b06b7601d97a4d4bb4071938df87076"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b06b7601d97a4d4bb4071938df87076">&#9670;&nbsp;</a></span>Arm_Command</h2>
+<a id="ac48cc99091f83f149fef8f17fd5d7e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac48cc99091f83f149fef8f17fd5d7e7f">&#9670;&nbsp;</a></span>Arm_Command</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="struct_controller_1_1arm__command.html">Controller::arm_command</a>  <a class="el" href="class_controller.html#a1b06b7601d97a4d4bb4071938df87076">Controller::Arm_Command</a></td>
+          <td class="memname"><a class="el" href="class_controller.html#ac48cc99091f83f149fef8f17fd5d7e7f">Controller::Arm_Command</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ab45ad0d63abd4b57021f13810fc856d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab45ad0d63abd4b57021f13810fc856d3">&#9670;&nbsp;</a></span>Microsteps</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_controller.html#ab45ad0d63abd4b57021f13810fc856d3">Controller::Microsteps</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Used to placehold common Microstep configs for the motor drivers. </p>
+<p>Type for the Arm_Command Struct to allow easy definition. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="struct_controller_1_1arm__command.html" title="The structure used to define the overall instruction parsed from serial input. ">Controller::arm_command</a> </dd></dl>
 
 </div>
 </div>
@@ -224,20 +201,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa94f1aea40982c422a43c1ee5aea0c49a7c6a23455db73e86dcfafcb0025ac5dd"></a>HALF&#160;</td><td class="fielddoc"><p>HALF. </p>
-<p>1/2 Microstep Ratio </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa94f1aea40982c422a43c1ee5aea0c49a7c6a23455db73e86dcfafcb0025ac5dd"></a>HALF&#160;</td><td class="fielddoc"><p>1/2 Microstep Ratio </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa94f1aea40982c422a43c1ee5aea0c49aa4e1dc476afca095736e176eb109dc11"></a>QUARTER&#160;</td><td class="fielddoc"><p>QUARTER. </p>
-<p>1/4 Microstep Ratio </p>
+<tr><td class="fieldname"><a id="aa94f1aea40982c422a43c1ee5aea0c49aa4e1dc476afca095736e176eb109dc11"></a>QUARTER&#160;</td><td class="fielddoc"><p>1/4 Microstep Ratio </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa94f1aea40982c422a43c1ee5aea0c49a99f575098d1be025c224acc42fd921a0"></a>EIGTH&#160;</td><td class="fielddoc"><p>EIGTH. </p>
-<p>1/8 Microstep Ratio </p>
+<tr><td class="fieldname"><a id="aa94f1aea40982c422a43c1ee5aea0c49a99f575098d1be025c224acc42fd921a0"></a>EIGTH&#160;</td><td class="fielddoc"><p>1/8 Microstep Ratio </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa94f1aea40982c422a43c1ee5aea0c49af214e4647ac3115a559b96a464219371"></a>SIXTEENTH&#160;</td><td class="fielddoc"><p>SIXTEENTH. </p>
-<p>1/16 Microstep Ratio </p>
+<tr><td class="fieldname"><a id="aa94f1aea40982c422a43c1ee5aea0c49af214e4647ac3115a559b96a464219371"></a>SIXTEENTH&#160;</td><td class="fielddoc"><p>1/16 Microstep Ratio </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aa94f1aea40982c422a43c1ee5aea0c49aad17f41f310f462eb36ac9f6bac29b57"></a>THIRTY_SECOND&#160;</td><td class="fielddoc"><p>THIRTY_SECOND. </p>
-<p>1/32 Microstep Ratio </p>
+<tr><td class="fieldname"><a id="aa94f1aea40982c422a43c1ee5aea0c49aad17f41f310f462eb36ac9f6bac29b57"></a>THIRTY_SECOND&#160;</td><td class="fielddoc"><p>1/32 Microstep Ratio </p>
 </td></tr>
 </table>
 
@@ -245,134 +217,71 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a95c56822d667e94b031451729ce069a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95c56822d667e94b031451729ce069a9">&#9670;&nbsp;</a></span>Controller()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Controller::Controller </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_controller_8cpp_source.html#l00017">17</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="cpu__map_8h_source.html#l00042">Pinout::EXTEND_DIR</a>, <a class="el" href="cpu__map_8h_source.html#l00036">Pinout::EXTEND_STEP</a>, <a class="el" href="_controller_8h_source.html#l00120">extendDriver</a>, <a class="el" href="_controller_8h_source.html#l00115">grabDriver</a>, <a class="el" href="cpu__map_8h_source.html#l00032">Pinout::GRIP_DIR</a>, <a class="el" href="cpu__map_8h_source.html#l00027">Pinout::GRIP_STEP</a>, <a class="el" href="cpu__map_8h_source.html#l00056">MotorConfig::MICROSTEPS</a>, <a class="el" href="cpu__map_8h_source.html#l00061">MotorConfig::MOTOR_RPM</a>, <a class="el" href="cpu__map_8h_source.html#l00051">MotorConfig::MOTOR_STEPS</a>, <a class="el" href="_controller_8h_source.html#l00110">rotateDriver</a>, <a class="el" href="cpu__map_8h_source.html#l00022">Pinout::WRIST_ROT_DIR</a>, and <a class="el" href="cpu__map_8h_source.html#l00017">Pinout::WRIST_ROT_STEP</a>.</p>
-
-</div>
-</div>
-<a id="a0ab87934c4f7a266cfdb86e0f36bc1b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ab87934c4f7a266cfdb86e0f36bc1b5">&#9670;&nbsp;</a></span>~Controller()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Controller::~Controller </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_controller_8cpp_source.html#l00034">34</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a70a36b927bb2df8febae95ed3cb50d63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70a36b927bb2df8febae95ed3cb50d63">&#9670;&nbsp;</a></span>executeCmd()</h2>
+<a id="ac1fc6cd2f507cc05e66a602e809c2446"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1fc6cd2f507cc05e66a602e809c2446">&#9670;&nbsp;</a></span>executeCmd()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Controller::executeCmd </td>
+          <td class="memname">Controller::executeCmd </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Runs Commands based on data pointed to by currentCmd Uses the parsing rules defined by parseSerial and then do the respective action. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_controller.html#ad7583687bca402756ed9a4a8dc2e29ee" title="Translates Serial or Other Input into an Arm_Command struct object This function will take the string...">Controller::parseSerial</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_controller_8cpp_source.html#l00111">111</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_controller_8h_source.html#l00120">extendDriver</a>, <a class="el" href="_controller_8cpp_source.html#l00040">getCommand()</a>, <a class="el" href="_controller_8h_source.html#l00115">grabDriver</a>, <a class="el" href="_controller_8h_source.html#l00050">Controller::arm_command::op</a>, <a class="el" href="_controller_8h_source.html#l00110">rotateDriver</a>, and <a class="el" href="_controller_8h_source.html#l00051">Controller::arm_command::value</a>.</p>
+<p class="reference">References <a class="el" href="_controller_8cpp_source.html#l00040">getCommand()</a>, <a class="el" href="_controller_8h_source.html#l00055">Controller::arm_command::op</a>, and <a class="el" href="_controller_8h_source.html#l00056">Controller::arm_command::value</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_controller_a70a36b927bb2df8febae95ed3cb50d63_cgraph.png" border="0" usemap="#class_controller_a70a36b927bb2df8febae95ed3cb50d63_cgraph" alt=""/></div>
-<map name="class_controller_a70a36b927bb2df8febae95ed3cb50d63_cgraph" id="class_controller_a70a36b927bb2df8febae95ed3cb50d63_cgraph">
-<area shape="rect" id="node2" href="class_controller.html#aaf8bd1fc8842fa7a5544af219adf414c" title="Controller::getCommand" alt="" coords="212,5,375,32"/>
+<div class="center"><img src="class_controller_ac1fc6cd2f507cc05e66a602e809c2446_cgraph.png" border="0" usemap="#class_controller_ac1fc6cd2f507cc05e66a602e809c2446_cgraph" alt=""/></div>
+<map name="class_controller_ac1fc6cd2f507cc05e66a602e809c2446_cgraph" id="class_controller_ac1fc6cd2f507cc05e66a602e809c2446_cgraph">
+<area shape="rect" id="node2" href="class_controller.html#af746c7701fda226720efe02890a308b2" title="Getter method for the currentCmd pointer. " alt="" coords="212,5,375,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aaf8bd1fc8842fa7a5544af219adf414c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf8bd1fc8842fa7a5544af219adf414c">&#9670;&nbsp;</a></span>getCommand()</h2>
+<a id="af746c7701fda226720efe02890a308b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af746c7701fda226720efe02890a308b2">&#9670;&nbsp;</a></span>getCommand()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_controller.html#a1b06b7601d97a4d4bb4071938df87076">Controller::Arm_Command</a> * Controller::getCommand </td>
+          <td class="memname">Controller::getCommand </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p>Getter method for the currentCmd pointer. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the Arm_Command object of the pointer </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_controller_8cpp_source.html#l00040">40</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="_controller_8h_source.html#l00105">currentCmd</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="_controller_8cpp_source.html#l00111">executeCmd()</a>, and <a class="el" href="_controller_8cpp_source.html#l00081">printExec()</a>.</p>
 
 </div>
 </div>
-<a id="a02671eb16452b74848f56f954d8dde1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02671eb16452b74848f56f954d8dde1a">&#9670;&nbsp;</a></span>initMotors()</h2>
+<a id="ad7583687bca402756ed9a4a8dc2e29ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7583687bca402756ed9a4a8dc2e29ee">&#9670;&nbsp;</a></span>parseSerial()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Controller::initMotors </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab539c04f3472ce35d99947d145f95b4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab539c04f3472ce35d99947d145f95b4b">&#9670;&nbsp;</a></span>parseSerial()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Controller::parseSerial </td>
+          <td class="memname">Controller::parseSerial </td>
           <td>(</td>
           <td class="paramtype">String&#160;</td>
           <td class="paramname"><em>rawinput</em></td><td>)</td>
@@ -380,27 +289,29 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Translates Serial or Other Input into an Arm_Command struct object This function will take the string input, and then parse based on the first character of the string. Parsing goes as follows: -Any commands related to rotation will start with an 'r' or 'R', then followed by a double indicating revolutions -Any commands related to gripping will start with a 'g' or 'G', then followed by a 0 or 1. Other values will trigger an exception -Any commands related to extending the arm will start with an 'e' or 'E', then followed by a double indicating motor rotation. We will assert that the value is between -1 and 1 for now -Any unrecognized letter will return the ERROR enum and 1 as the value. Serial should display an error message, or trigger an exception Once the command is selected, the remaining value is parsed as a double, and then pointed to in the Arm_Command Pointer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">rawinput</td><td></td></tr>
+    <tr><td class="paramname">rawinput</td><td>The input from Serial or other communication method </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_controller_8cpp_source.html#l00049">49</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_controller_8h_source.html#l00050">Controller::arm_command::op</a>, and <a class="el" href="_controller_8h_source.html#l00051">Controller::arm_command::value</a>.</p>
+<p class="reference">References <a class="el" href="_controller_8h_source.html#l00055">Controller::arm_command::op</a>, and <a class="el" href="_controller_8h_source.html#l00056">Controller::arm_command::value</a>.</p>
 
 </div>
 </div>
-<a id="a658aa1846a4b44a9f79578ee017a1116"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a658aa1846a4b44a9f79578ee017a1116">&#9670;&nbsp;</a></span>printExec()</h2>
+<a id="a8ad1d152a91997ab3825f32d2dcecfd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ad1d152a91997ab3825f32d2dcecfd4">&#9670;&nbsp;</a></span>printExec()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Controller::printExec </td>
+          <td class="memname">Controller::printExec </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -408,148 +319,48 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Debug Function to test the parser Prints output in the serial connection based on the values in currentCmd. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_controller.html#ad7583687bca402756ed9a4a8dc2e29ee" title="Translates Serial or Other Input into an Arm_Command struct object This function will take the string...">Controller::parseSerial</a> </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="_controller_8cpp_source.html#l00081">81</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="_controller_8cpp_source.html#l00040">getCommand()</a>, and <a class="el" href="_controller_8h_source.html#l00050">Controller::arm_command::op</a>.</p>
+<p class="reference">References <a class="el" href="_controller_8cpp_source.html#l00040">getCommand()</a>, and <a class="el" href="_controller_8h_source.html#l00055">Controller::arm_command::op</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_controller_a658aa1846a4b44a9f79578ee017a1116_cgraph.png" border="0" usemap="#class_controller_a658aa1846a4b44a9f79578ee017a1116_cgraph" alt=""/></div>
-<map name="class_controller_a658aa1846a4b44a9f79578ee017a1116_cgraph" id="class_controller_a658aa1846a4b44a9f79578ee017a1116_cgraph">
-<area shape="rect" id="node2" href="class_controller.html#aaf8bd1fc8842fa7a5544af219adf414c" title="Controller::getCommand" alt="" coords="193,5,356,32"/>
+<div class="center"><img src="class_controller_a8ad1d152a91997ab3825f32d2dcecfd4_cgraph.png" border="0" usemap="#class_controller_a8ad1d152a91997ab3825f32d2dcecfd4_cgraph" alt=""/></div>
+<map name="class_controller_a8ad1d152a91997ab3825f32d2dcecfd4_cgraph" id="class_controller_a8ad1d152a91997ab3825f32d2dcecfd4_cgraph">
+<area shape="rect" id="node2" href="class_controller.html#af746c7701fda226720efe02890a308b2" title="Getter method for the currentCmd pointer. " alt="" coords="193,5,356,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a59b53351b9037c5cd186e9d32ca37baa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59b53351b9037c5cd186e9d32ca37baa">&#9670;&nbsp;</a></span>setCommand()</h2>
+<a id="a951ce5ec5a6e653e9dd78b36351d80c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a951ce5ec5a6e653e9dd78b36351d80c5">&#9670;&nbsp;</a></span>setCommand()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Controller::setCommand </td>
+          <td class="memname">Controller::setCommand </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_controller.html#a1b06b7601d97a4d4bb4071938df87076">Controller::Arm_Command</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_controller.html#ac48cc99091f83f149fef8f17fd5d7e7f">Controller::Arm_Command</a> *&#160;</td>
           <td class="paramname"><em>cmd</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Setter method for the currentCmd pointer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cmd</td><td></td></tr>
+    <tr><td class="paramname">cmd</td><td>The pointer to overwrite the current pointer of currentCmd </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_controller_8cpp_source.html#l00044">44</a> of file <a class="el" href="_controller_8cpp_source.html">Controller.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a809d8cb0ecbccb5740b8f72bbed8dd32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a809d8cb0ecbccb5740b8f72bbed8dd32">&#9670;&nbsp;</a></span>currentCmd</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_controller.html#a1b06b7601d97a4d4bb4071938df87076">Arm_Command</a>* Controller::currentCmd</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_controller_8h_source.html#l00105">105</a> of file <a class="el" href="_controller_8h_source.html">Controller.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_controller_8cpp_source.html#l00040">getCommand()</a>.</p>
-
-</div>
-</div>
-<a id="a269efb6c442129f6f5f9aca4450d2258"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a269efb6c442129f6f5f9aca4450d2258">&#9670;&nbsp;</a></span>extendDriver</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">BasicStepperDriver* Controller::extendDriver</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_controller_8h_source.html#l00120">120</a> of file <a class="el" href="_controller_8h_source.html">Controller.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_controller_8cpp_source.html#l00017">Controller()</a>, and <a class="el" href="_controller_8cpp_source.html#l00111">executeCmd()</a>.</p>
-
-</div>
-</div>
-<a id="ac48c7b82c23ccff1ffe3ba34225aff41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac48c7b82c23ccff1ffe3ba34225aff41">&#9670;&nbsp;</a></span>grabDriver</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">BasicStepperDriver* Controller::grabDriver</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_controller_8h_source.html#l00115">115</a> of file <a class="el" href="_controller_8h_source.html">Controller.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_controller_8cpp_source.html#l00017">Controller()</a>, and <a class="el" href="_controller_8cpp_source.html#l00111">executeCmd()</a>.</p>
-
-</div>
-</div>
-<a id="a5678454b560873dfb3197609f1e86199"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5678454b560873dfb3197609f1e86199">&#9670;&nbsp;</a></span>rotateDriver</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">BasicStepperDriver* Controller::rotateDriver</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_controller_8h_source.html#l00110">110</a> of file <a class="el" href="_controller_8h_source.html">Controller.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="_controller_8cpp_source.html#l00017">Controller()</a>, and <a class="el" href="_controller_8cpp_source.html#l00111">executeCmd()</a>.</p>
 
 </div>
 </div>

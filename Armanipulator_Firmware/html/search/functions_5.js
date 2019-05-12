@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['setcommand',['setCommand',['../class_controller.html#a59b53351b9037c5cd186e9d32ca37baa',1,'Controller']]]
+  ['_7econtroller',['~Controller',['../class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5',1,'Controller']]]
 ];

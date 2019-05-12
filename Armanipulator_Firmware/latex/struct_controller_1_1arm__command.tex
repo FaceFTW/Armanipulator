@@ -2,6 +2,11 @@
 \label{struct_controller_1_1arm__command}\index{Controller\+::arm\+\_\+command@{Controller\+::arm\+\_\+command}}
 
 
+The structure used to define the overall instruction parsed from serial input.  
+
+
+
+
 {\ttfamily \#include $<$Controller.\+h$>$}
 
 \subsection*{Public Attributes}
@@ -14,9 +19,9 @@ double \hyperlink{struct_controller_1_1arm__command_a2e40c7e8947f625f1d39ac9568a
 
 
 \subsection{Detailed Description}
+The structure used to define the overall instruction parsed from serial input. 
 
-
-Definition at line 49 of file Controller.\+h.
+Definition at line 54 of file Controller.\+h.
 
 
 
@@ -27,9 +32,9 @@ Definition at line 49 of file Controller.\+h.
 \subsubsection{\texorpdfstring{op}{op}}
 {\footnotesize\ttfamily \hyperlink{class_controller_a91a5751dd6920daf3b70814171b51767}{Controller\+::\+Arm\+\_\+\+Operation} Controller\+::arm\+\_\+command\+::op}
 
+The operation used in the command Structure 
 
-
-Definition at line 50 of file Controller.\+h.
+Definition at line 55 of file Controller.\+h.
 
 
 
@@ -41,9 +46,9 @@ Referenced by Controller\+::execute\+Cmd(), Controller\+::parse\+Serial(), and C
 \subsubsection{\texorpdfstring{value}{value}}
 {\footnotesize\ttfamily double Controller\+::arm\+\_\+command\+::value}
 
+The value associated with the operation. If the command in op is E\+R\+R\+OR, the value is 1 by default 
 
-
-Definition at line 51 of file Controller.\+h.
+Definition at line 56 of file Controller.\+h.
 
 
 

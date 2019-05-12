@@ -2,27 +2,18 @@
 \label{class_controller}\index{Controller@{Controller}}
 
 
-The class-\/object used to interface between the serial interface and.  
+The class-\/object used to interface between the serial interface and the stepper motor drivers.  
 
 
 
 
 {\ttfamily \#include $<$Controller.\+h$>$}
 
-
-
-Collaboration diagram for Controller\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=208pt]{class_controller__coll__graph}
-\end{center}
-\end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{struct_controller_1_1arm__command}{arm\+\_\+command}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The structure used to define the overall instruction parsed from serial input. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -44,66 +35,53 @@ enum \hyperlink{class_controller_aa94f1aea40982c422a43c1ee5aea0c49}{microsteps} 
 \hyperlink{class_controller_aa94f1aea40982c422a43c1ee5aea0c49aad17f41f310f462eb36ac9f6bac29b57}{T\+H\+I\+R\+T\+Y\+\_\+\+S\+E\+C\+O\+ND}
  \}
 \item 
+\mbox{\Hypertarget{class_controller_ab45ad0d63abd4b57021f13810fc856d3}\label{class_controller_ab45ad0d63abd4b57021f13810fc856d3}} 
 typedef enum \hyperlink{class_controller_aa94f1aea40982c422a43c1ee5aea0c49}{Controller\+::microsteps} \hyperlink{class_controller_ab45ad0d63abd4b57021f13810fc856d3}{Microsteps}
 \begin{DoxyCompactList}\small\item\em Used to placehold common Microstep configs for the motor drivers. \end{DoxyCompactList}\item 
-typedef struct \hyperlink{struct_controller_1_1arm__command}{Controller\+::arm\+\_\+command} \hyperlink{class_controller_a1b06b7601d97a4d4bb4071938df87076}{Arm\+\_\+\+Command}
-\end{DoxyCompactItemize}
+typedef struct \hyperlink{struct_controller_1_1arm__command}{Controller\+::arm\+\_\+command} \hyperlink{class_controller_ac48cc99091f83f149fef8f17fd5d7e7f}{Arm\+\_\+\+Command}
+\begin{DoxyCompactList}\small\item\em Type for the Arm\+\_\+\+Command Struct to allow easy definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_controller_a95c56822d667e94b031451729ce069a9}\label{class_controller_a95c56822d667e94b031451729ce069a9}} 
 \hyperlink{class_controller_a95c56822d667e94b031451729ce069a9}{Controller} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for the controller object In this constructor, the motors are created on the heap, and then the motor pointer vars now point to the motors on the heap. current\+Cmd is not initialized, because it does not need to be pointed to at the minute. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}\label{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}} 
 virtual \hyperlink{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}{$\sim$\+Controller} ()
-\item 
-void \hyperlink{class_controller_ab539c04f3472ce35d99947d145f95b4b}{parse\+Serial} (String rawinput)
-\item 
-void \hyperlink{class_controller_a658aa1846a4b44a9f79578ee017a1116}{print\+Exec} ()
-\item 
-void \hyperlink{class_controller_a02671eb16452b74848f56f954d8dde1a}{init\+Motors} ()
-\item 
-void \hyperlink{class_controller_a70a36b927bb2df8febae95ed3cb50d63}{execute\+Cmd} ()
-\item 
-\hyperlink{class_controller_a1b06b7601d97a4d4bb4071938df87076}{Arm\+\_\+\+Command} $\ast$ \hyperlink{class_controller_aaf8bd1fc8842fa7a5544af219adf414c}{get\+Command} ()
-\item 
-void \hyperlink{class_controller_a59b53351b9037c5cd186e9d32ca37baa}{set\+Command} (\hyperlink{class_controller_a1b06b7601d97a4d4bb4071938df87076}{Arm\+\_\+\+Command} $\ast$cmd)
-\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\hyperlink{class_controller_a1b06b7601d97a4d4bb4071938df87076}{Arm\+\_\+\+Command} $\ast$ \hyperlink{class_controller_a809d8cb0ecbccb5740b8f72bbed8dd32}{current\+Cmd}
-\item 
-Basic\+Stepper\+Driver $\ast$ \hyperlink{class_controller_a5678454b560873dfb3197609f1e86199}{rotate\+Driver}
-\item 
-Basic\+Stepper\+Driver $\ast$ \hyperlink{class_controller_ac48c7b82c23ccff1ffe3ba34225aff41}{grab\+Driver}
-\item 
-Basic\+Stepper\+Driver $\ast$ \hyperlink{class_controller_a269efb6c442129f6f5f9aca4450d2258}{extend\+Driver}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor for the controller object Has no purpose, therefore does nothing. \end{DoxyCompactList}\item 
+void \hyperlink{class_controller_ad7583687bca402756ed9a4a8dc2e29ee}{parse\+Serial} (String rawinput)
+\begin{DoxyCompactList}\small\item\em Translates Serial or Other Input into an Arm\+\_\+\+Command struct object This function will take the string input, and then parse based on the first character of the string. Parsing goes as follows\+: -\/\+Any commands related to rotation will start with an \textquotesingle{}r\textquotesingle{} or \textquotesingle{}R\textquotesingle{}, then followed by a double indicating revolutions -\/\+Any commands related to gripping will start with a \textquotesingle{}g\textquotesingle{} or \textquotesingle{}G\textquotesingle{}, then followed by a 0 or 1. Other values will trigger an exception -\/\+Any commands related to extending the arm will start with an \textquotesingle{}e\textquotesingle{} or \textquotesingle{}E\textquotesingle{}, then followed by a double indicating motor rotation. We will assert that the value is between -\/1 and 1 for now -\/\+Any unrecognized letter will return the E\+R\+R\+OR enum and 1 as the value. Serial should display an error message, or trigger an exception Once the command is selected, the remaining value is parsed as a double, and then pointed to in the Arm\+\_\+\+Command Pointer. \end{DoxyCompactList}\item 
+void \hyperlink{class_controller_a8ad1d152a91997ab3825f32d2dcecfd4}{print\+Exec} ()
+\begin{DoxyCompactList}\small\item\em Debug Function to test the parser Prints output in the serial connection based on the values in current\+Cmd. \end{DoxyCompactList}\item 
+void \hyperlink{class_controller_ac1fc6cd2f507cc05e66a602e809c2446}{execute\+Cmd} ()
+\begin{DoxyCompactList}\small\item\em Runs Commands based on data pointed to by current\+Cmd Uses the parsing rules defined by parse\+Serial and then do the respective action. \end{DoxyCompactList}\item 
+\hyperlink{class_controller_ac48cc99091f83f149fef8f17fd5d7e7f}{Arm\+\_\+\+Command} $\ast$ \hyperlink{class_controller_af746c7701fda226720efe02890a308b2}{get\+Command} ()
+\begin{DoxyCompactList}\small\item\em Getter method for the current\+Cmd pointer. \end{DoxyCompactList}\item 
+void \hyperlink{class_controller_a951ce5ec5a6e653e9dd78b36351d80c5}{set\+Command} (\hyperlink{class_controller_ac48cc99091f83f149fef8f17fd5d7e7f}{Arm\+\_\+\+Command} $\ast$cmd)
+\begin{DoxyCompactList}\small\item\em Setter method for the current\+Cmd pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-The class-\/object used to interface between the serial interface and. 
+The class-\/object used to interface between the serial interface and the stepper motor drivers. 
 
 Definition at line 20 of file Controller.\+h.
 
 
 
 \subsection{Member Typedef Documentation}
-\mbox{\Hypertarget{class_controller_a1b06b7601d97a4d4bb4071938df87076}\label{class_controller_a1b06b7601d97a4d4bb4071938df87076}} 
+\mbox{\Hypertarget{class_controller_ac48cc99091f83f149fef8f17fd5d7e7f}\label{class_controller_ac48cc99091f83f149fef8f17fd5d7e7f}} 
 \index{Controller@{Controller}!Arm\+\_\+\+Command@{Arm\+\_\+\+Command}}
 \index{Arm\+\_\+\+Command@{Arm\+\_\+\+Command}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{Arm\+\_\+\+Command}{Arm\_Command}}
-{\footnotesize\ttfamily typedef struct \hyperlink{struct_controller_1_1arm__command}{Controller\+::arm\+\_\+command}  \hyperlink{class_controller_a1b06b7601d97a4d4bb4071938df87076}{Controller\+::\+Arm\+\_\+\+Command}}
-
-\mbox{\Hypertarget{class_controller_ab45ad0d63abd4b57021f13810fc856d3}\label{class_controller_ab45ad0d63abd4b57021f13810fc856d3}} 
-\index{Controller@{Controller}!Microsteps@{Microsteps}}
-\index{Microsteps@{Microsteps}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{Microsteps}{Microsteps}}
-{\footnotesize\ttfamily \hyperlink{class_controller_ab45ad0d63abd4b57021f13810fc856d3}{Controller\+::\+Microsteps}}
+{\footnotesize\ttfamily \hyperlink{class_controller_ac48cc99091f83f149fef8f17fd5d7e7f}{Controller\+::\+Arm\+\_\+\+Command}}
 
 
 
-Used to placehold common Microstep configs for the motor drivers. 
+Type for the Arm\+\_\+\+Command Struct to allow easy definition. 
 
+\begin{DoxySeeAlso}{See also}
+\hyperlink{struct_controller_1_1arm__command}{Controller\+::arm\+\_\+command} 
+\end{DoxySeeAlso}
 
 
 \subsection{Member Enumeration Documentation}
@@ -151,23 +129,23 @@ Definition at line 27 of file Controller.\+h.
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{H\+A\+LF@{H\+A\+LF}!Controller@{Controller}}\index{Controller@{Controller}!H\+A\+LF@{H\+A\+LF}}}\mbox{\Hypertarget{class_controller_aa94f1aea40982c422a43c1ee5aea0c49a7c6a23455db73e86dcfafcb0025ac5dd}\label{class_controller_aa94f1aea40982c422a43c1ee5aea0c49a7c6a23455db73e86dcfafcb0025ac5dd}} 
-H\+A\+LF&H\+A\+LF. 1/2 Microstep Ratio \\
+H\+A\+LF&1/2 Microstep Ratio \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Q\+U\+A\+R\+T\+ER@{Q\+U\+A\+R\+T\+ER}!Controller@{Controller}}\index{Controller@{Controller}!Q\+U\+A\+R\+T\+ER@{Q\+U\+A\+R\+T\+ER}}}\mbox{\Hypertarget{class_controller_aa94f1aea40982c422a43c1ee5aea0c49aa4e1dc476afca095736e176eb109dc11}\label{class_controller_aa94f1aea40982c422a43c1ee5aea0c49aa4e1dc476afca095736e176eb109dc11}} 
-Q\+U\+A\+R\+T\+ER&Q\+U\+A\+R\+T\+ER. 1/4 Microstep Ratio \\
+Q\+U\+A\+R\+T\+ER&1/4 Microstep Ratio \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{E\+I\+G\+TH@{E\+I\+G\+TH}!Controller@{Controller}}\index{Controller@{Controller}!E\+I\+G\+TH@{E\+I\+G\+TH}}}\mbox{\Hypertarget{class_controller_aa94f1aea40982c422a43c1ee5aea0c49a99f575098d1be025c224acc42fd921a0}\label{class_controller_aa94f1aea40982c422a43c1ee5aea0c49a99f575098d1be025c224acc42fd921a0}} 
-E\+I\+G\+TH&E\+I\+G\+TH. 1/8 Microstep Ratio \\
+E\+I\+G\+TH&1/8 Microstep Ratio \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{S\+I\+X\+T\+E\+E\+N\+TH@{S\+I\+X\+T\+E\+E\+N\+TH}!Controller@{Controller}}\index{Controller@{Controller}!S\+I\+X\+T\+E\+E\+N\+TH@{S\+I\+X\+T\+E\+E\+N\+TH}}}\mbox{\Hypertarget{class_controller_aa94f1aea40982c422a43c1ee5aea0c49af214e4647ac3115a559b96a464219371}\label{class_controller_aa94f1aea40982c422a43c1ee5aea0c49af214e4647ac3115a559b96a464219371}} 
-S\+I\+X\+T\+E\+E\+N\+TH&S\+I\+X\+T\+E\+E\+N\+TH. 1/16 Microstep Ratio \\
+S\+I\+X\+T\+E\+E\+N\+TH&1/16 Microstep Ratio \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{T\+H\+I\+R\+T\+Y\+\_\+\+S\+E\+C\+O\+ND@{T\+H\+I\+R\+T\+Y\+\_\+\+S\+E\+C\+O\+ND}!Controller@{Controller}}\index{Controller@{Controller}!T\+H\+I\+R\+T\+Y\+\_\+\+S\+E\+C\+O\+ND@{T\+H\+I\+R\+T\+Y\+\_\+\+S\+E\+C\+O\+ND}}}\mbox{\Hypertarget{class_controller_aa94f1aea40982c422a43c1ee5aea0c49aad17f41f310f462eb36ac9f6bac29b57}\label{class_controller_aa94f1aea40982c422a43c1ee5aea0c49aad17f41f310f462eb36ac9f6bac29b57}} 
-T\+H\+I\+R\+T\+Y\+\_\+\+S\+E\+C\+O\+ND&T\+H\+I\+R\+T\+Y\+\_\+\+S\+E\+C\+O\+ND. 1/32 Microstep Ratio \\
+T\+H\+I\+R\+T\+Y\+\_\+\+S\+E\+C\+O\+ND&1/32 Microstep Ratio \\
 \hline
 
 \end{DoxyEnumFields}
@@ -177,63 +155,48 @@ Definition at line 38 of file Controller.\+h.
 
 
 
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_controller_a95c56822d667e94b031451729ce069a9}\label{class_controller_a95c56822d667e94b031451729ce069a9}} 
-\index{Controller@{Controller}!Controller@{Controller}}
-\index{Controller@{Controller}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{Controller()}{Controller()}}
-{\footnotesize\ttfamily Controller\+::\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 17 of file Controller.\+cpp.
-
-
-
-References Pinout\+::\+E\+X\+T\+E\+N\+D\+\_\+\+D\+IR, Pinout\+::\+E\+X\+T\+E\+N\+D\+\_\+\+S\+T\+EP, extend\+Driver, grab\+Driver, Pinout\+::\+G\+R\+I\+P\+\_\+\+D\+IR, Pinout\+::\+G\+R\+I\+P\+\_\+\+S\+T\+EP, Motor\+Config\+::\+M\+I\+C\+R\+O\+S\+T\+E\+PS, Motor\+Config\+::\+M\+O\+T\+O\+R\+\_\+\+R\+PM, Motor\+Config\+::\+M\+O\+T\+O\+R\+\_\+\+S\+T\+E\+PS, rotate\+Driver, Pinout\+::\+W\+R\+I\+S\+T\+\_\+\+R\+O\+T\+\_\+\+D\+IR, and Pinout\+::\+W\+R\+I\+S\+T\+\_\+\+R\+O\+T\+\_\+\+S\+T\+EP.
-
-\mbox{\Hypertarget{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}\label{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}} 
-\index{Controller@{Controller}!````~Controller@{$\sim$\+Controller}}
-\index{````~Controller@{$\sim$\+Controller}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{$\sim$\+Controller()}{~Controller()}}
-{\footnotesize\ttfamily Controller\+::$\sim$\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Definition at line 34 of file Controller.\+cpp.
-
-
-
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_controller_a70a36b927bb2df8febae95ed3cb50d63}\label{class_controller_a70a36b927bb2df8febae95ed3cb50d63}} 
+\mbox{\Hypertarget{class_controller_ac1fc6cd2f507cc05e66a602e809c2446}\label{class_controller_ac1fc6cd2f507cc05e66a602e809c2446}} 
 \index{Controller@{Controller}!execute\+Cmd@{execute\+Cmd}}
 \index{execute\+Cmd@{execute\+Cmd}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{execute\+Cmd()}{executeCmd()}}
-{\footnotesize\ttfamily void Controller\+::execute\+Cmd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Controller\+::execute\+Cmd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Runs Commands based on data pointed to by current\+Cmd Uses the parsing rules defined by parse\+Serial and then do the respective action. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_controller_ad7583687bca402756ed9a4a8dc2e29ee}{Controller\+::parse\+Serial} 
+\end{DoxySeeAlso}
 
 
 Definition at line 111 of file Controller.\+cpp.
 
 
 
-References extend\+Driver, get\+Command(), grab\+Driver, Controller\+::arm\+\_\+command\+::op, rotate\+Driver, and Controller\+::arm\+\_\+command\+::value.
+References get\+Command(), Controller\+::arm\+\_\+command\+::op, and Controller\+::arm\+\_\+command\+::value.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_controller_a70a36b927bb2df8febae95ed3cb50d63_cgraph}
+\includegraphics[width=350pt]{class_controller_ac1fc6cd2f507cc05e66a602e809c2446_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_controller_aaf8bd1fc8842fa7a5544af219adf414c}\label{class_controller_aaf8bd1fc8842fa7a5544af219adf414c}} 
+\mbox{\Hypertarget{class_controller_af746c7701fda226720efe02890a308b2}\label{class_controller_af746c7701fda226720efe02890a308b2}} 
 \index{Controller@{Controller}!get\+Command@{get\+Command}}
 \index{get\+Command@{get\+Command}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{get\+Command()}{getCommand()}}
-{\footnotesize\ttfamily \hyperlink{class_controller_a1b06b7601d97a4d4bb4071938df87076}{Controller\+::\+Arm\+\_\+\+Command} $\ast$ Controller\+::get\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Controller\+::get\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter method for the current\+Cmd pointer. 
 
 \begin{DoxyReturn}{Returns}
-
+Pointer to the Arm\+\_\+\+Command object of the pointer 
 \end{DoxyReturn}
 
 
@@ -241,27 +204,21 @@ Definition at line 40 of file Controller.\+cpp.
 
 
 
-References current\+Cmd.
-
-
-
 Referenced by execute\+Cmd(), and print\+Exec().
 
-\mbox{\Hypertarget{class_controller_a02671eb16452b74848f56f954d8dde1a}\label{class_controller_a02671eb16452b74848f56f954d8dde1a}} 
-\index{Controller@{Controller}!init\+Motors@{init\+Motors}}
-\index{init\+Motors@{init\+Motors}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{init\+Motors()}{initMotors()}}
-{\footnotesize\ttfamily void Controller\+::init\+Motors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_controller_ab539c04f3472ce35d99947d145f95b4b}\label{class_controller_ab539c04f3472ce35d99947d145f95b4b}} 
+\mbox{\Hypertarget{class_controller_ad7583687bca402756ed9a4a8dc2e29ee}\label{class_controller_ad7583687bca402756ed9a4a8dc2e29ee}} 
 \index{Controller@{Controller}!parse\+Serial@{parse\+Serial}}
 \index{parse\+Serial@{parse\+Serial}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{parse\+Serial()}{parseSerial()}}
-{\footnotesize\ttfamily void Controller\+::parse\+Serial (\begin{DoxyParamCaption}\item[{String}]{rawinput }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Controller\+::parse\+Serial (\begin{DoxyParamCaption}\item[{String}]{rawinput }\end{DoxyParamCaption})}
+
+
+
+Translates Serial or Other Input into an Arm\+\_\+\+Command struct object This function will take the string input, and then parse based on the first character of the string. Parsing goes as follows\+: -\/\+Any commands related to rotation will start with an \textquotesingle{}r\textquotesingle{} or \textquotesingle{}R\textquotesingle{}, then followed by a double indicating revolutions -\/\+Any commands related to gripping will start with a \textquotesingle{}g\textquotesingle{} or \textquotesingle{}G\textquotesingle{}, then followed by a 0 or 1. Other values will trigger an exception -\/\+Any commands related to extending the arm will start with an \textquotesingle{}e\textquotesingle{} or \textquotesingle{}E\textquotesingle{}, then followed by a double indicating motor rotation. We will assert that the value is between -\/1 and 1 for now -\/\+Any unrecognized letter will return the E\+R\+R\+OR enum and 1 as the value. Serial should display an error message, or trigger an exception Once the command is selected, the remaining value is parsed as a double, and then pointed to in the Arm\+\_\+\+Command Pointer. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em rawinput} & \\
+{\em rawinput} & The input from Serial or other communication method \\
 \hline
 \end{DoxyParams}
 
@@ -272,12 +229,19 @@ Definition at line 49 of file Controller.\+cpp.
 
 References Controller\+::arm\+\_\+command\+::op, and Controller\+::arm\+\_\+command\+::value.
 
-\mbox{\Hypertarget{class_controller_a658aa1846a4b44a9f79578ee017a1116}\label{class_controller_a658aa1846a4b44a9f79578ee017a1116}} 
+\mbox{\Hypertarget{class_controller_a8ad1d152a91997ab3825f32d2dcecfd4}\label{class_controller_a8ad1d152a91997ab3825f32d2dcecfd4}} 
 \index{Controller@{Controller}!print\+Exec@{print\+Exec}}
 \index{print\+Exec@{print\+Exec}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{print\+Exec()}{printExec()}}
-{\footnotesize\ttfamily void Controller\+::print\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Controller\+::print\+Exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Debug Function to test the parser Prints output in the serial connection based on the values in current\+Cmd. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_controller_ad7583687bca402756ed9a4a8dc2e29ee}{Controller\+::parse\+Serial} 
+\end{DoxySeeAlso}
 
 
 Definition at line 81 of file Controller.\+cpp.
@@ -286,22 +250,27 @@ Definition at line 81 of file Controller.\+cpp.
 
 References get\+Command(), and Controller\+::arm\+\_\+command\+::op.
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=343pt]{class_controller_a658aa1846a4b44a9f79578ee017a1116_cgraph}
+\includegraphics[width=343pt]{class_controller_a8ad1d152a91997ab3825f32d2dcecfd4_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_controller_a59b53351b9037c5cd186e9d32ca37baa}\label{class_controller_a59b53351b9037c5cd186e9d32ca37baa}} 
+\mbox{\Hypertarget{class_controller_a951ce5ec5a6e653e9dd78b36351d80c5}\label{class_controller_a951ce5ec5a6e653e9dd78b36351d80c5}} 
 \index{Controller@{Controller}!set\+Command@{set\+Command}}
 \index{set\+Command@{set\+Command}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{set\+Command()}{setCommand()}}
-{\footnotesize\ttfamily void Controller\+::set\+Command (\begin{DoxyParamCaption}\item[{\hyperlink{class_controller_a1b06b7601d97a4d4bb4071938df87076}{Controller\+::\+Arm\+\_\+\+Command} $\ast$}]{cmd }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Controller\+::set\+Command (\begin{DoxyParamCaption}\item[{\hyperlink{class_controller_ac48cc99091f83f149fef8f17fd5d7e7f}{Controller\+::\+Arm\+\_\+\+Command} $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Setter method for the current\+Cmd pointer. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em cmd} & \\
+{\em cmd} & The pointer to overwrite the current pointer of current\+Cmd \\
 \hline
 \end{DoxyParams}
 
@@ -310,66 +279,7 @@ Definition at line 44 of file Controller.\+cpp.
 
 
 
-\subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_controller_a809d8cb0ecbccb5740b8f72bbed8dd32}\label{class_controller_a809d8cb0ecbccb5740b8f72bbed8dd32}} 
-\index{Controller@{Controller}!current\+Cmd@{current\+Cmd}}
-\index{current\+Cmd@{current\+Cmd}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{current\+Cmd}{currentCmd}}
-{\footnotesize\ttfamily \hyperlink{class_controller_a1b06b7601d97a4d4bb4071938df87076}{Arm\+\_\+\+Command}$\ast$ Controller\+::current\+Cmd\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line 105 of file Controller.\+h.
-
-
-
-Referenced by get\+Command().
-
-\mbox{\Hypertarget{class_controller_a269efb6c442129f6f5f9aca4450d2258}\label{class_controller_a269efb6c442129f6f5f9aca4450d2258}} 
-\index{Controller@{Controller}!extend\+Driver@{extend\+Driver}}
-\index{extend\+Driver@{extend\+Driver}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{extend\+Driver}{extendDriver}}
-{\footnotesize\ttfamily Basic\+Stepper\+Driver$\ast$ Controller\+::extend\+Driver\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line 120 of file Controller.\+h.
-
-
-
-Referenced by Controller(), and execute\+Cmd().
-
-\mbox{\Hypertarget{class_controller_ac48c7b82c23ccff1ffe3ba34225aff41}\label{class_controller_ac48c7b82c23ccff1ffe3ba34225aff41}} 
-\index{Controller@{Controller}!grab\+Driver@{grab\+Driver}}
-\index{grab\+Driver@{grab\+Driver}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{grab\+Driver}{grabDriver}}
-{\footnotesize\ttfamily Basic\+Stepper\+Driver$\ast$ Controller\+::grab\+Driver\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line 115 of file Controller.\+h.
-
-
-
-Referenced by Controller(), and execute\+Cmd().
-
-\mbox{\Hypertarget{class_controller_a5678454b560873dfb3197609f1e86199}\label{class_controller_a5678454b560873dfb3197609f1e86199}} 
-\index{Controller@{Controller}!rotate\+Driver@{rotate\+Driver}}
-\index{rotate\+Driver@{rotate\+Driver}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{rotate\+Driver}{rotateDriver}}
-{\footnotesize\ttfamily Basic\+Stepper\+Driver$\ast$ Controller\+::rotate\+Driver\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Definition at line 110 of file Controller.\+h.
-
-
-
-Referenced by Controller(), and execute\+Cmd().
-
-
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 \hyperlink{_controller_8h}{Controller.\+h}\item 
-\hyperlink{_controller_8cpp}{Controller.\+cpp}\end{DoxyCompactItemize}
+Controller.\+cpp\end{DoxyCompactItemize}

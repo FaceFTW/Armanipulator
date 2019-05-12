@@ -14,7 +14,7 @@
 #include "cpu_map.h"
 
 /** @class Controller
- * 	@brief The class-object used to interface between the serial interface and
+ * 	@brief The class-object used to interface between the serial interface and the stepper motor drivers
  *
  */
 class Controller {
@@ -43,8 +43,13 @@ public:
 		THIRTY_SECOND /**< 1/32 Microstep Ratio		  */
 	} Microsteps;
 
-	/** @struct Controller::Arm_Command
-	 *	@brief The structure used to define the overall instruction parsed from serial
+	/** @typedef Controller::Arm_Command
+	 * 	@brief Type for the Arm_Command Struct to allow easy definition
+	 * 	@sa Controller::arm_command
+	 */
+
+	/** @struct Controller::arm_command
+	 *	@brief The structure used to define the overall instruction parsed from serial input
 	 */
 	typedef struct arm_command {
 		Controller::Arm_Operation op; /**< The operation used in the command Structure */
@@ -120,13 +125,13 @@ private:
 	 */
 	BasicStepperDriver* rotateDriver;
 
-	/** @var BasicStepperDriver* rotateDriver
+	/** @var BasicStepperDriver* grabDriver
 	 *	Serves as a pointer to the motor driver for the hand grip. This cannot be an actual object given how the heap works, and therefore the pointer serves as the access point for the actual driver object.
 	 *	Similar any other pointers, this explicitly holds the memory address for the driver object, not the object itself.
 	 */
 	BasicStepperDriver* grabDriver;
 
-	/** @var BasicStepperDriver* rotateDriver
+	/** @var BasicStepperDriver* extendDriver
 	 *	Serves as a pointer to the motor driver for the arm extension motor. This cannot be an actual object given how the heap works, and therefore the pointer serves as the access point for the actual driver object.
 	 *	Similar any other pointers, this explicitly holds the memory address for the driver object, not the object itself.
 	 */
