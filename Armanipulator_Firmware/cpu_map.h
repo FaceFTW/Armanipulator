@@ -11,26 +11,53 @@
 class Pinout {
 public:
 //Define Wrist Driver Pins
+	/**
+	 *
+	 */
 	const static short WRIST_ROT_STEP = 2;
+
+	/**
+	 *
+	 */
 	const static short WRIST_ROT_DIR = 3;
 //Define Grip Driver Pins
+	/**
+	 *
+	 */
 	const static short GRIP_STEP = 4;
+
+	/**
+	 *
+	 */
 	const static short GRIP_DIR = 5;
 
 //Define Arm Motion Pins
-	const static short EXTEND_STEP = 6;
+
+	const static short EXTEND_STEP = 6;	/**< */
+
+
+	/**
+	 *
+	 */
 	const static short EXTEND_DIR = 7;
 
-//Define Microstep Control Pins
-	const static short MICROSTEP_1 = 8;
-	const static short MICROSTEP_2 = 9;
-	const static short MICROSTEP_3 = 10;
 };
 
 class MotorConfig {
 public:
+	/**
+	 *
+	 */
 	const static short MOTOR_STEPS = 200;
+
+	/**
+	 *
+	 */
 	const static short MICROSTEPS = 1;
+
+	/**
+	 *
+	 */
 	const static short MOTOR_RPM = 120;
 };
 

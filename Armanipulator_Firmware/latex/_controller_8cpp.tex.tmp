@@ -1,0 +1,60 @@
+\hypertarget{_controller_8cpp}{}\section{Controller.\+cpp File Reference}
+\label{_controller_8cpp}\index{Controller.\+cpp@{Controller.\+cpp}}
+{\ttfamily \#include \char`\"{}Controller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cpu\+\_\+map.\+h\char`\"{}}\newline
+Include dependency graph for Controller.\+cpp\+:
+% FIG 0
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_controller_a1b06b7601d97a4d4bb4071938df87076}{Controller\+::\+Arm\+\_\+\+Command} $\ast$ \hyperlink{_controller_8cpp_add17797b9c4282f6e91f6d2f0a58a6cc}{current\+Cmd}
+\item 
+Basic\+Stepper\+Driver $\ast$ \hyperlink{_controller_8cpp_a42b5f2c17e34717e264a99e17a35a445}{rotate\+Driver}
+\item 
+Basic\+Stepper\+Driver $\ast$ \hyperlink{_controller_8cpp_a84ed43e9619bc0d37bfcad2d1c74333d}{grab\+Driver}
+\item 
+Basic\+Stepper\+Driver $\ast$ \hyperlink{_controller_8cpp_a64545030bf193d46b9f256ba134a750d}{extend\+Driver}
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_controller_8cpp_add17797b9c4282f6e91f6d2f0a58a6cc}\label{_controller_8cpp_add17797b9c4282f6e91f6d2f0a58a6cc}} 
+\index{Controller.\+cpp@{Controller.\+cpp}!current\+Cmd@{current\+Cmd}}
+\index{current\+Cmd@{current\+Cmd}!Controller.\+cpp@{Controller.\+cpp}}
+\subsubsection{\texorpdfstring{current\+Cmd}{currentCmd}}
+{\footnotesize\ttfamily \hyperlink{class_controller_a1b06b7601d97a4d4bb4071938df87076}{Controller\+::\+Arm\+\_\+\+Command}$\ast$ current\+Cmd}
+
+
+
+Definition at line 12 of file Controller.\+cpp.
+
+\mbox{\Hypertarget{_controller_8cpp_a64545030bf193d46b9f256ba134a750d}\label{_controller_8cpp_a64545030bf193d46b9f256ba134a750d}} 
+\index{Controller.\+cpp@{Controller.\+cpp}!extend\+Driver@{extend\+Driver}}
+\index{extend\+Driver@{extend\+Driver}!Controller.\+cpp@{Controller.\+cpp}}
+\subsubsection{\texorpdfstring{extend\+Driver}{extendDriver}}
+{\footnotesize\ttfamily Basic\+Stepper\+Driver$\ast$ extend\+Driver}
+
+
+
+Definition at line 15 of file Controller.\+cpp.
+
+\mbox{\Hypertarget{_controller_8cpp_a84ed43e9619bc0d37bfcad2d1c74333d}\label{_controller_8cpp_a84ed43e9619bc0d37bfcad2d1c74333d}} 
+\index{Controller.\+cpp@{Controller.\+cpp}!grab\+Driver@{grab\+Driver}}
+\index{grab\+Driver@{grab\+Driver}!Controller.\+cpp@{Controller.\+cpp}}
+\subsubsection{\texorpdfstring{grab\+Driver}{grabDriver}}
+{\footnotesize\ttfamily Basic\+Stepper\+Driver$\ast$ grab\+Driver}
+
+
+
+Definition at line 14 of file Controller.\+cpp.
+
+\mbox{\Hypertarget{_controller_8cpp_a42b5f2c17e34717e264a99e17a35a445}\label{_controller_8cpp_a42b5f2c17e34717e264a99e17a35a445}} 
+\index{Controller.\+cpp@{Controller.\+cpp}!rotate\+Driver@{rotate\+Driver}}
+\index{rotate\+Driver@{rotate\+Driver}!Controller.\+cpp@{Controller.\+cpp}}
+\subsubsection{\texorpdfstring{rotate\+Driver}{rotateDriver}}
+{\footnotesize\ttfamily Basic\+Stepper\+Driver$\ast$ rotate\+Driver}
+
+
+
+Definition at line 13 of file Controller.\+cpp.
+
