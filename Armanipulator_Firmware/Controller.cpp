@@ -9,20 +9,25 @@
 #include "Controller.h"
 #include "cpu_map.h"
 
-//Vars (or are they?)
-BasicStepperDriver* rotateDriver;
-BasicStepperDriver* grabDriver;
-BasicStepperDriver* extendDriver;
-Controller::Arm_Command CurrentCmd = {Controller::Arm_Operation::ERROR ,1};
-
+Controller::Arm_Command* currentCmd;
+	BasicStepperDriver* rotateDriver;
+	BasicStepperDriver* grabDriver;
+	BasicStepperDriver* extendDriver;
 //Bob the builder
 Controller::Controller() {
 	//Init the motors
-	initMotors();
+	//Declare Motor Pinouts
+		rotateDriver = new BasicStepperDriver(MotorConfig::MOTOR_STEPS, Pinout::WRIST_ROT_DIR, Pinout::WRIST_ROT_STEP);
+		grabDriver = new BasicStepperDriver(MotorConfig::MOTOR_STEPS, Pinout::GRIP_DIR, Pinout::GRIP_STEP);
+		extendDriver =  new BasicStepperDriver(MotorConfig::MOTOR_STEPS, Pinout::EXTEND_DIR, Pinout::EXTEND_STEP);
+
+		//Start the motors
+		rotateDriver->begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
+		grabDriver->begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
+		extendDriver->begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
 
 	//Init the struct as an error struct (If executeCMD is called before parseSerial, error is returned intentionally)
-	currentCmd.op = Controller::Arm_Operation::ERROR;
-	currentCmd.value = 1;
+
 }
 
 //DESTROY THE CHILD. CORRUPT THEM ALL
@@ -32,25 +37,14 @@ Controller::~Controller() {
 
 //Getters and Setters
 //Arm_Command
-Controller::Arm_Command Controller::getCommand(){
+Controller::Arm_Command* Controller::getCommand(){
 	return currentCmd;
 }
 
-void Controller::setCommand(Controller::Arm_Command cmd){
+void Controller::setCommand(Controller::Arm_Command* cmd){
 	currentCmd = cmd;
 }
 
-void initMotors() {
-	//Declare Motor Pinouts
-	rotateDriver = new BasicStepperDriver(MotorConfig::MOTOR_STEPS, Pinout::WRIST_ROT_DIR, Pinout::WRIST_ROT_STEP);
-	grabDriver = new BasicStepperDriver(MotorConfig::MOTOR_STEPS, Pinout::GRIP_DIR, Pinout::GRIP_STEP);
-	extendDriver =  new BasicStepperDriver(MotorConfig::MOTOR_STEPS, Pinout::EXTEND_DIR, Pinout::EXTEND_STEP);
-
-	//Start the motors
-	rotateDriver->begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
-	grabDriver->begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
-	extendDriver->begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
-}
 
 void Controller::parseSerial(String rawinput) {
 	Arm_Command* out = new Arm_Command();
@@ -81,25 +75,25 @@ void Controller::parseSerial(String rawinput) {
 		out->op = Controller::Arm_Operation::ERROR;
 		out->value = 1;
 	}
-	currentCmd = &out;
+	currentCmd = out;
 }
 
-static void Controller::printExec(Controller::Arm_Command cmd) {
-	Controller::Arm_Operation plsdo = cmd.op;
+void Controller::printExec() {
+	Controller::Arm_Operation plsdo = this->getCommand()->op;
 	switch (plsdo) {
 	case Controller::Arm_Operation::ROTATE:
 		Serial.println("Command: Rotate");
-		Serial.println("Value: " + String(cmd.value));
+		Serial.println("Value: " + String(this->getCommand()->value));
 		Serial.println("");
 		break;
 	case Controller::Arm_Operation::GRAB:
 		Serial.println("Command: Grab");
-		Serial.println("Value: " + String(cmd.value));
+		Serial.println("Value: " + String(this->getCommand()->value));
 		Serial.println("");
 		break;
 	case Controller::Arm_Operation::EXTEND:
 		Serial.println("Command: Extend");
-		Serial.println("Value: " + String(cmd.value));
+		Serial.println("Value: " + String(this->getCommand()->value));
 		Serial.println("");
 		break;
 	case Controller::Arm_Operation::MICROSTEPS:
@@ -107,15 +101,15 @@ static void Controller::printExec(Controller::Arm_Command cmd) {
 		break;
 	case Controller::Arm_Operation::ERROR:
 		Serial.println("Command: Error");
-		Serial.println("Value: " + String(cmd.value));
+		Serial.println("Value: " + String(this->getCommand()->value));
 		Serial.println("");
 		break;
 	}
 }
 
 //Execute Order 66
-void executeCmd(){
-	Controller::Arm_Operation cmdop = currentCmd->op;
+void Controller::executeCmd(){
+	Controller::Arm_Operation cmdop = this->getCommand()->op;
 	//TODO: Check efficiency of using a switch statement instead of an if/else chain
 	//See Jump Tables and low-level intricacies produced by AVR
 	switch (cmdop) {

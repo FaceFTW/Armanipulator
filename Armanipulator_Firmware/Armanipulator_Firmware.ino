@@ -5,7 +5,7 @@
 #include "Controller.h"
 #include "StepperDriver/src/BasicStepperDriver.h"
 
-Controller mainController;
+Controller *mainController;
 
 void setup() {
 	Serial.begin(115200);
@@ -18,7 +18,7 @@ void loop() {
 
 	if (Serial.available() > 0) {
 		String serialIn = Serial.readString();
-		mainController.parseSerial(serialIn);
-		Controller::printExec(mainController.getCommand());
+		mainController->parseSerial(serialIn);
+		mainController->printExec();
 	}
 }

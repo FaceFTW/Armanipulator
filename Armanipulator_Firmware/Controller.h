@@ -42,7 +42,7 @@ public:
 
 	//Parser Related Methods
 	void parseSerial(String rawinput);
-	static void printExec(Arm_Command cmd);
+	void printExec();
 
 	//Motor Init
 	void initMotors();
@@ -52,14 +52,14 @@ public:
 
 	//Getter & Setter for variables
 	//Arm_Command cmd
-	Arm_Command getCommand();
-	void setCommand(Arm_Command cmd);
+	Arm_Command* getCommand();
+	void setCommand(Arm_Command* cmd);
 
 
 
 	//Private Vars
 private:
-	Arm_Command currentCmd;
+	Arm_Command* currentCmd;
 	BasicStepperDriver* rotateDriver;
 	BasicStepperDriver* grabDriver;
 	BasicStepperDriver* extendDriver;
