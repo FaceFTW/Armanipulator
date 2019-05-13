@@ -117,10 +117,13 @@ void Controller::executeCmd(){
 		rotateDriver->move(currentCmd->value);
 		break;
 	case Controller::Arm_Operation::GRAB:
-		grabDriver->move(currentCmd->value);
+		grabDriver->move(currentCmd->value);				//Activate
 		break;
 	case Controller::Arm_Operation::EXTEND:
-		extendDriver->move(currentCmd->value);
+		extendDriver->move(currentCmd->value);				//Rotate the extender motor by value
+		break;
+	case Controller::Arm_Operation::MICROSTEPS:
+		//Empty for now
 		break;
 	case Controller::Arm_Operation::ERROR:
 		Serial.println("Error, Unrecognized Command");

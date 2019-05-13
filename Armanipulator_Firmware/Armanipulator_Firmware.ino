@@ -20,5 +20,6 @@ void loop() {
 		String serialIn = Serial.readString();
 		mainController->parseSerial(serialIn);
 		mainController->printExec();
+		mainController->executeCmd();
 	}
 }
