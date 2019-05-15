@@ -17,12 +17,9 @@ BasicStepperDriver* extendDriver;
 Controller::Controller() {
 	//Init the motors
 	//Declare Motor Pinouts
-	rotateDriver = new BasicStepperDriver(MotorConfig::MOTOR_STEPS,
-			Pinout::WRIST_ROT_DIR, Pinout::WRIST_ROT_STEP);
-	grabDriver = new BasicStepperDriver(MotorConfig::MOTOR_STEPS,
-			Pinout::GRIP_DIR, Pinout::GRIP_STEP);
-	extendDriver = new BasicStepperDriver(MotorConfig::MOTOR_STEPS,
-			Pinout::EXTEND_DIR, Pinout::EXTEND_STEP);
+	rotateDriver = new BasicStepperDriver(MotorConfig::MOTOR_STEPS, Pinout::WRIST_ROT_DIR, Pinout::WRIST_ROT_STEP);
+	grabDriver = new BasicStepperDriver(MotorConfig::MOTOR_STEPS, Pinout::GRIP_DIR, Pinout::GRIP_STEP);
+	extendDriver = new BasicStepperDriver(MotorConfig::MOTOR_STEPS,	Pinout::EXTEND_DIR, Pinout::EXTEND_STEP);
 
 	//Start the motors
 	rotateDriver->begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
@@ -30,7 +27,7 @@ Controller::Controller() {
 	extendDriver->begin(MotorConfig::MOTOR_RPM, MotorConfig::MICROSTEPS);
 
 	//Init the struct as an error struct (If executeCMD is called before parseSerial, error is returned intentionally)
-
+	currentCmd = new Arm_Command{Controller::Arm_Operation::ERROR, 1};
 }
 
 //DESTROY THE CHILD. CORRUPT THEM ALL
