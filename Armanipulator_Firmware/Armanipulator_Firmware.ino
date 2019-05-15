@@ -1,5 +1,5 @@
 /** @file Armanipulator_Firmware.ino
- *  Base file for the arduino sketch
+ *  @brief Base file for the arduino sketch
  */
 
 #include <HardwareSerial.h>
@@ -10,7 +10,7 @@
 #include "StepperDriver/src/BasicStepperDriver.h"
 
 
-Controller* mainController;
+Controller* mainController;						/**< Pointer to the Controller Object */
 
 	/** @fn Main::setup
 	 *  @brief One-time initalization function

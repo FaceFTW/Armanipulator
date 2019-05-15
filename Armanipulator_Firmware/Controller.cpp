@@ -1,6 +1,5 @@
-/*
- * Controller.cpp
- *
+/** @file Controller.cpp
+ *	@brief Source File for the Controller Class
  *  Created on: May 11, 2019
  *      Author: FaceF
  */
@@ -9,10 +8,10 @@
 #include "Controller.h"
 #include "cpu_map.h"
 
-Controller::Arm_Command* currentCmd;
-BasicStepperDriver* rotateDriver;
-BasicStepperDriver* grabDriver;
-BasicStepperDriver* extendDriver;
+Controller::Arm_Command* currentCmd;				/**< Pointer to the Arm_Command struct in use */
+BasicStepperDriver* rotateDriver;					/**< Pointer to the Stepper Driver responsible for wrist rotation*/
+BasicStepperDriver* grabDriver;						/**< Pointer to the stepper driver responsible for grab motions*/
+BasicStepperDriver* extendDriver;					/**< Pointer to the stepper driver responsible for arm extension*/
 //Bob the builder
 Controller::Controller() {
 	//Init the motors

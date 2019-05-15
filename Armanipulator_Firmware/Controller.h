@@ -24,6 +24,7 @@ public:
 	/**	@typedef Controller::Arm_Operation
 	 * 	@brief Used to define common commands parsed by the arm
 	 */
+
 	typedef enum {
 		ROTATE, /**< Run the Wrist Rotation Motor */
 		GRAB, /**< Run the Grab motor			  */
@@ -35,12 +36,15 @@ public:
 	/** @typedef Controller::Microsteps
 	 *	@brief	Used to placehold common Microstep configs for the motor drivers
 	 */
+	/** @enum Controller::microsteps
+	 * @brief Enum for the Microsteps typedef
+	 */
 	typedef enum microsteps {
-		HALF, /**< 1/2 Microstep Ratio		  */
-		QUARTER, /**< 1/4 Microstep Ratio		  */
-		EIGTH, /**< 1/8 Microstep Ratio		  */
-		SIXTEENTH, /**< 1/16 Microstep Ratio		  */
-		THIRTY_SECOND /**< 1/32 Microstep Ratio		  */
+		HALF, /**< 1/2 Microstep Ratio		  */         //!< HALF
+		QUARTER, /**< 1/4 Microstep Ratio		  */      //!< QUARTER
+		EIGTH, /**< 1/8 Microstep Ratio		  */        //!< EIGTH
+		SIXTEENTH, /**< 1/16 Microstep Ratio		  */   //!< SIXTEENTH
+		THIRTY_SECOND /**< 1/32 Microstep Ratio		  *///!< THIRTY_SECOND
 	} Microsteps;
 
 	/** @typedef Controller::Arm_Command

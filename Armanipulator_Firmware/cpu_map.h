@@ -1,5 +1,5 @@
 /** @file cpu_map.h
- *
+ * @brief Pin mapping and common configuration
  * Created: 4/24/2019 9:38:26 PM
  *  Author: Alex Westerman
  *  Used to define pins in relation to the stepper motor drivers
@@ -9,7 +9,7 @@
 #define CPU_MAP
 
 /** @class Pinout
- * 	Contains the pin definitions of the motor drivers and any other relevant pins
+ * 	@brief Contains the pin definitions of the motor drivers and any other relevant pins
  */
 class Pinout {
 public:
@@ -29,7 +29,7 @@ public:
 };
 
 /** @class MotorConfig
- * 	Contains constants related to motor configuration
+ * 	@brief Contains constants related to motor configuration
  */
 class MotorConfig {
 public:
