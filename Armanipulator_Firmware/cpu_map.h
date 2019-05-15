@@ -35,7 +35,7 @@ class MotorConfig {
 public:
 	const static short MOTOR_STEPS = 200;		/**< Constant used for defining the number of motor steps per revolution of the stepper motor */
 	const static short MICROSTEPS = 1;			/**< Constant used for defining the current microstep resolution */
-	const static short MOTOR_RPM = 120;			/**< Constant used for defining the RPM of the stepper motor (essentially speed) */
+	const static short MOTOR_RPM = 50;			/**< Constant used for defining the RPM of the stepper motor (essentially speed) */
 };
 
 #endif
