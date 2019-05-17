@@ -1,6 +1,6 @@
-<map id="Controller.h" name="Controller.h">
-<area shape="rect" id="node1" title="Contains methods for controlling the motors and parsing input." alt="" coords="167,5,255,32"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,87,85,114"/>
-<area shape="rect" id="node3" title=" " alt="" coords="109,80,312,121"/>
-<area shape="rect" id="node4" href="$d1/d6c/cpu__map_8h.html" title="Pin mapping and common configuration Created: 4/24/2019 9:38:26 PM Author: Alex Westerman Used to def..." alt="" coords="337,87,423,114"/>
+<map id="Armanipulator_Firmware/Controller.h" name="Armanipulator_Firmware/Controller.h">
+<area shape="rect" id="node1" title="Contains methods for controlling the motors and parsing input." alt="" coords="129,5,292,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,102,85,129"/>
+<area shape="rect" id="node3" title=" " alt="" coords="109,95,312,136"/>
+<area shape="rect" id="node4" href="$d1/d6c/cpu__map_8h.html" title="Pin mapping and common configuration Created: 4/24/2019 9:38:26 PM Author: Alex Westerman Used to def..." alt="" coords="337,102,423,129"/>
 </map>
