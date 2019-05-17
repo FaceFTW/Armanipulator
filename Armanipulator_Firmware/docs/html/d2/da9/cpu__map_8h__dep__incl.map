@@ -1,6 +1,0 @@
-<map id="cpu_map.h" name="cpu_map.h">
-<area shape="rect" id="node1" title="Pin mapping and common configuration Created: 4/24/2019 9:38:26 PM Author: Alex Westerman Used to def..." alt="" coords="136,5,223,32"/>
-<area shape="rect" id="node2" href="$d9/d86/_armanipulator___firmware_8ino.html" title="Base file for the arduino sketch." alt="" coords="5,155,188,181"/>
-<area shape="rect" id="node3" href="$d2/d94/_controller_8h.html" title="Contains methods for controlling the motors and parsing input." alt="" coords="135,80,223,107"/>
-<area shape="rect" id="node4" href="$d3/dec/_controller_8cpp.html" title="Source File for the Controller Class Created on: May 11, 2019 Author: FaceF." alt="" coords="212,155,315,181"/>
-</map>
