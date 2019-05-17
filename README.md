@@ -1,7 +1,7 @@
 ﻿# Armanipulator
 This project is created by Alex Westerman, Dalton Yu, Felix Xu, and Alexander Luu as a final project for the Project Lead the Way Engineering Design and Development Capstone course. 
 
-## Project respirces
+## Project resources
 - Documentation for the firmware code is available on the [Github Pages](https://faceftw.github.io/Armanipulator)  website Other forms of the documentation (PDF, RTF) can be found in the [docs](https://github.com/FaceFTW/Armanipulator/tree/master/docs) folder of the repository
 - The firmware source is found in the [Armanipulator_Firmware](https://github.com/FaceFTW/Armanipulator/tree/master/Armanipulator_Firmware) folder.
 - The source for the client program running on a computer is in the [Client](https://github.com/FaceFTW/Armanipulator/tree/master/Client) folder. Documentation for this is not complete due to time constraints
