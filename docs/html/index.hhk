@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#ac48cc99091f83f149fef8f17fd5d7e7f"><param name="Name" value="Arm_Command"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d9/d86/_armanipulator___firmware_8ino.html"><param name="Name" value="Armanipulator_Firmware.ino"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d9/d86/_armanipulator___firmware_8ino.html#a42a381ee3ff0ca225e31a7c005ac6144"><param name="Name" value="loop"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d9/d86/_armanipulator___firmware_8ino.html"><param name="Name" value="Armanipulator_Firmware.ino"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d9/d86/_armanipulator___firmware_8ino.html#ad95d2190ac475a88f898e402402622ee"><param name="Name" value="mainController"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d9/d86/_armanipulator___firmware_8ino.html#a25af802df6dde23e2485f01409dd62da"><param name="Name" value="Armanipulator_Firmware.ino"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/dec/_controller_8cpp.html"><param name="Name" value="Controller.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/dec/_controller_8cpp.html#add17797b9c4282f6e91f6d2f0a58a6cc"><param name="Name" value="currentCmd"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/dec/_controller_8cpp.html"><param name="Name" value="Controller.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/dec/_controller_8cpp.html#a64545030bf193d46b9f256ba134a750d"><param name="Name" value="extendDriver"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/dec/_controller_8cpp.html"><param name="Name" value="Controller.cpp"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/dec/_controller_8cpp.html#a84ed43e9619bc0d37bfcad2d1c74333d"><param name="Name" value="grabDriver"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/dec/_controller_8cpp.html#a42b5f2c17e34717e264a99e17a35a445"><param name="Name" value="Controller.cpp"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/dd5/struct_controller_1_1arm__command.html"><param name="Name" value="Controller::arm_command"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/dd5/struct_controller_1_1arm__command.html"><param name="Name" value="Controller::arm_command"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/dd5/struct_controller_1_1arm__command.html#ac31649d9bb8a03e80a86a59bdfa0be75"><param name="Name" value="op"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/dd5/struct_controller_1_1arm__command.html#a2e40c7e8947f625f1d39ac9568a1976a"><param name="Name" value="Controller::arm_command"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#ac48cc99091f83f149fef8f17fd5d7e7f"><param name="Name" value="Arm_Command"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a95c56822d667e94b031451729ce069a9"><param name="Name" value="Controller"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#aa94f1aea40982c422a43c1ee5aea0c49a99f575098d1be025c224acc42fd921a0"><param name="Name" value="EIGTH"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a91a5751dd6920daf3b70814171b51767ae276bf8b30c8b606b54d8fb7d92c1ee6"><param name="Name" value="ERROR"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#ac1fc6cd2f507cc05e66a602e809c2446"><param name="Name" value="executeCmd"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a91a5751dd6920daf3b70814171b51767a1f9769fc0e78abe69b7a4ad5d573eb6c"><param name="Name" value="EXTEND"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#af746c7701fda226720efe02890a308b2"><param name="Name" value="getCommand"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a91a5751dd6920daf3b70814171b51767a41ed83326fd9ad04a2d24a228bc7a7ef"><param name="Name" value="GRAB"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#aa94f1aea40982c422a43c1ee5aea0c49a7c6a23455db73e86dcfafcb0025ac5dd"><param name="Name" value="HALF"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#ab45ad0d63abd4b57021f13810fc856d3"><param name="Name" value="Microsteps"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a91a5751dd6920daf3b70814171b51767a7d0e6ebddd2cb5dc5fb2100c018cc6d8"><param name="Name" value="MICROSTEPS"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#ad7583687bca402756ed9a4a8dc2e29ee"><param name="Name" value="parseSerial"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a8ad1d152a91997ab3825f32d2dcecfd4"><param name="Name" value="printExec"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#aa94f1aea40982c422a43c1ee5aea0c49aa4e1dc476afca095736e176eb109dc11"><param name="Name" value="QUARTER"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a91a5751dd6920daf3b70814171b51767a99ba9596fbe683c122b76174e7d40b8e"><param name="Name" value="ROTATE"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a951ce5ec5a6e653e9dd78b36351d80c5"><param name="Name" value="setCommand"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#aa94f1aea40982c422a43c1ee5aea0c49af214e4647ac3115a559b96a464219371"><param name="Name" value="SIXTEENTH"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html"><param name="Name" value="Controller"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#aa94f1aea40982c422a43c1ee5aea0c49aad17f41f310f462eb36ac9f6bac29b57"><param name="Name" value="THIRTY_SECOND"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5"><param name="Name" value="Controller"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/dec/_controller_8cpp.html#add17797b9c4282f6e91f6d2f0a58a6cc"><param name="Name" value="currentCmd"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#aa94f1aea40982c422a43c1ee5aea0c49a99f575098d1be025c224acc42fd921a0"><param name="Name" value="EIGTH"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a91a5751dd6920daf3b70814171b51767ae276bf8b30c8b606b54d8fb7d92c1ee6"><param name="Name" value="ERROR"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#ac1fc6cd2f507cc05e66a602e809c2446"><param name="Name" value="executeCmd"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a91a5751dd6920daf3b70814171b51767a1f9769fc0e78abe69b7a4ad5d573eb6c"><param name="Name" value="EXTEND"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html#a361ce1c43bf6c143f2ae3e85ba0d5e25"><param name="Name" value="EXTEND_DIR"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html#a69dd96e739859d5cc64e477ca844276b"><param name="Name" value="EXTEND_STEP"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/dec/_controller_8cpp.html#a64545030bf193d46b9f256ba134a750d"><param name="Name" value="extendDriver"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#af746c7701fda226720efe02890a308b2"><param name="Name" value="getCommand"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a91a5751dd6920daf3b70814171b51767a41ed83326fd9ad04a2d24a228bc7a7ef"><param name="Name" value="GRAB"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/dec/_controller_8cpp.html#a84ed43e9619bc0d37bfcad2d1c74333d"><param name="Name" value="grabDriver"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html#a49466f79a0074d31c74885c4876693de"><param name="Name" value="GRIP_DIR"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html#a034e6fd901a557f17809260288ea4740"><param name="Name" value="GRIP_STEP"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#aa94f1aea40982c422a43c1ee5aea0c49a7c6a23455db73e86dcfafcb0025ac5dd"><param name="Name" value="HALF"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d9/d86/_armanipulator___firmware_8ino.html#a42a381ee3ff0ca225e31a7c005ac6144"><param name="Name" value="loop"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d9/d86/_armanipulator___firmware_8ino.html#ad95d2190ac475a88f898e402402622ee"><param name="Name" value="mainController"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#ab45ad0d63abd4b57021f13810fc856d3"><param name="Name" value="Microsteps"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a91a5751dd6920daf3b70814171b51767a7d0e6ebddd2cb5dc5fb2100c018cc6d8"><param name="Name" value="MICROSTEPS"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a91a5751dd6920daf3b70814171b51767a7d0e6ebddd2cb5dc5fb2100c018cc6d8"><param name="Name" value="Controller"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/d75/class_motor_config.html#a9671c799866d18d9bec915fc6b55f7b8"><param name="Name" value="MICROSTEPS"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/d75/class_motor_config.html#abe3fe3efcce60033bf58a93fda1c1011"><param name="Name" value="MOTOR_RPM"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/d75/class_motor_config.html#a7c9848ce827ad884f69001c8517178a7"><param name="Name" value="MOTOR_STEPS"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/d75/class_motor_config.html"><param name="Name" value="MotorConfig"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/d75/class_motor_config.html"><param name="Name" value="MotorConfig"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/d75/class_motor_config.html#a9671c799866d18d9bec915fc6b55f7b8"><param name="Name" value="MICROSTEPS"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/d75/class_motor_config.html"><param name="Name" value="MotorConfig"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/d75/class_motor_config.html#abe3fe3efcce60033bf58a93fda1c1011"><param name="Name" value="MOTOR_RPM"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/d75/class_motor_config.html#a7c9848ce827ad884f69001c8517178a7"><param name="Name" value="MotorConfig"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/dd5/struct_controller_1_1arm__command.html#ac31649d9bb8a03e80a86a59bdfa0be75"><param name="Name" value="op"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#ad7583687bca402756ed9a4a8dc2e29ee"><param name="Name" value="parseSerial"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html"><param name="Name" value="Pinout"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html"><param name="Name" value="Pinout"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html#a361ce1c43bf6c143f2ae3e85ba0d5e25"><param name="Name" value="EXTEND_DIR"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html"><param name="Name" value="Pinout"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html#a69dd96e739859d5cc64e477ca844276b"><param name="Name" value="EXTEND_STEP"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html"><param name="Name" value="Pinout"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html#a49466f79a0074d31c74885c4876693de"><param name="Name" value="GRIP_DIR"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html"><param name="Name" value="Pinout"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html#a034e6fd901a557f17809260288ea4740"><param name="Name" value="GRIP_STEP"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html"><param name="Name" value="Pinout"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html#a2bdfc2d0feb1763149886acaab1a0419"><param name="Name" value="WRIST_ROT_DIR"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html#a5f15f2424dc98ebf66f74063798ae28e"><param name="Name" value="Pinout"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a8ad1d152a91997ab3825f32d2dcecfd4"><param name="Name" value="printExec"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#aa94f1aea40982c422a43c1ee5aea0c49aa4e1dc476afca095736e176eb109dc11"><param name="Name" value="QUARTER"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a91a5751dd6920daf3b70814171b51767a99ba9596fbe683c122b76174e7d40b8e"><param name="Name" value="ROTATE"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d3/dec/_controller_8cpp.html#a42b5f2c17e34717e264a99e17a35a445"><param name="Name" value="rotateDriver"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a951ce5ec5a6e653e9dd78b36351d80c5"><param name="Name" value="setCommand"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d9/d86/_armanipulator___firmware_8ino.html#a25af802df6dde23e2485f01409dd62da"><param name="Name" value="setup"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#aa94f1aea40982c422a43c1ee5aea0c49af214e4647ac3115a559b96a464219371"><param name="Name" value="SIXTEENTH"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#aa94f1aea40982c422a43c1ee5aea0c49aad17f41f310f462eb36ac9f6bac29b57"><param name="Name" value="THIRTY_SECOND"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d4/dd5/struct_controller_1_1arm__command.html#a2e40c7e8947f625f1d39ac9568a1976a"><param name="Name" value="value"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html#a2bdfc2d0feb1763149886acaab1a0419"><param name="Name" value="WRIST_ROT_DIR"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="da/d85/class_pinout.html#a5f15f2424dc98ebf66f74063798ae28e"><param name="Name" value="WRIST_ROT_STEP"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="d8/d87/class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5"><param name="Name" value="~Controller"></OBJECT>
+</UL>
+</BODY>
+</HTML>
