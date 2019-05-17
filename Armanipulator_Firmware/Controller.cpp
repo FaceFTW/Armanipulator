@@ -1,6 +1,5 @@
-/*
- * Controller.cpp
- *
+/** @file Controller.cpp
+ *	@brief Source File for the Controller Class
  *  Created on: May 11, 2019
  *      Author: FaceF
  */
@@ -9,10 +8,10 @@
 #include "Controller.h"
 #include "cpu_map.h"
 
-Controller::Arm_Command* currentCmd;
-BasicStepperDriver* rotateDriver;
-BasicStepperDriver* grabDriver;
-BasicStepperDriver* extendDriver;
+Controller::Arm_Command* currentCmd;				/**< Pointer to the Arm_Command struct in use */
+BasicStepperDriver* rotateDriver;					/**< Pointer to the Stepper Driver responsible for wrist rotation*/
+BasicStepperDriver* grabDriver;						/**< Pointer to the stepper driver responsible for grab motions*/
+BasicStepperDriver* extendDriver;					/**< Pointer to the stepper driver responsible for arm extension*/
 //Bob the builder
 Controller::Controller() {
 	//Init the motors
@@ -113,21 +112,21 @@ void Controller::executeCmd() {
 			Serial.println("Error: Value for Wrist Rotation commands should be between -1 and 1");	//Print an error message and give explanation
 			return;																					//Exits to the main loop if bounds are not met
 		}
-		rotateDriver->move(currentCmd->value * 200);												//Otherwise, perform the movement
+		rotateDriver->move( (double)(currentCmd->value) * 200);												//Otherwise, perform the movement
 		break;
 	case Controller::Arm_Operation::GRAB:															//Do the grabby hand
 		if (this->getCommand()->value != 1 || this->getCommand()->value != -1) {					//Bounds checking, but stricter (Decimal values indicate a partial oepning of the hand, which us not the best practice
 			Serial.println("Error: Value for Grab commands should be either -1 or 1");				//Print an error message and give explanation
 			return;																					//Exits to the main loop if bounds are not met
 		}
-		grabDriver->move(currentCmd->value * 60);													//Do the grab (set value, motion depends on sign))
+		grabDriver->move((double)(currentCmd->value) * 60);													//Do the grab (set value, motion depends on sign))
 		break;
 	case Controller::Arm_Operation::EXTEND:															//Extend the arm!
 		if (this->getCommand()->value > 1 || this->getCommand()->value < -1) {						//Bounds checking, but not strict (arm should extend to variable lengths
 			Serial.println("Error: Value for Arm Extension commands should be between -1 and 1");	//Print an error message and give explanation
 			return;																					//Exits to the main loop if bounds are not met
 		}
-		extendDriver->move(currentCmd->value);														//Extend the arm
+		extendDriver->move((double) (currentCmd->value) *200);														//Extend the arm
 		break;
 	case Controller::Arm_Operation::MICROSTEPS:
 		//Empty for now

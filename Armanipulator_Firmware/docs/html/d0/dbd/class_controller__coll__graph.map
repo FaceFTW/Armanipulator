@@ -1,0 +1,4 @@
+<map id="Controller" name="Controller">
+<area shape="rect" id="node1" title="The class&#45;object used to interface between the serial interface and the stepper motor drivers." alt="" coords="52,95,129,121"/>
+<area shape="rect" id="node2" href="$d4/dd5/struct_controller_1_1arm__command.html" title="The structure used to define the overall instruction parsed from serial input." alt="" coords="5,5,176,32"/>
+</map>

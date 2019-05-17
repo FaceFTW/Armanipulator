@@ -1,0 +1,9 @@
+<map id="Armanipulator_Firmware.ino" name="Armanipulator_Firmware.ino">
+<area shape="rect" id="node1" title="Base file for the arduino sketch." alt="" coords="193,5,375,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,125,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="109,162,189,189"/>
+<area shape="rect" id="node4" href="$d1/d6c/cpu__map_8h.html" title="Pin mapping and common configuration Created: 4/24/2019 9:38:26 PM Author: Alex Westerman Used to def..." alt="" coords="214,162,301,189"/>
+<area shape="rect" id="node5" href="$d2/d94/_controller_8h.html" title="Contains methods for controlling the motors and parsing input." alt="" coords="200,80,288,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="325,155,528,196"/>
+<area shape="rect" id="node7" title=" " alt="" coords="413,80,491,107"/>
+</map>
