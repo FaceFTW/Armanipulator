@@ -108,21 +108,21 @@ void Controller::executeCmd() {
 	//See Jump Tables and low-level intricacies produced by AVR
 	switch (cmdop) {																				//What is the command
 	case Controller::Arm_Operation::ROTATE:															//Rotate the wrist
-		if (this->getCommand()->value > 1 || this->getCommand()->value < -1) {						//Check the bounds of the value
+		if ((double) this->getCommand()->value > 1 || (double) this->getCommand()->value < -1) {						//Check the bounds of the value
 			Serial.println("Error: Value for Wrist Rotation commands should be between -1 and 1");	//Print an error message and give explanation
 			return;																					//Exits to the main loop if bounds are not met
 		}
 		rotateDriver->move( (double)(currentCmd->value) * 200);												//Otherwise, perform the movement
 		break;
 	case Controller::Arm_Operation::GRAB:															//Do the grabby hand
-		if (this->getCommand()->value != 1 || this->getCommand()->value != -1) {					//Bounds checking, but stricter (Decimal values indicate a partial oepning of the hand, which us not the best practice
+		if ((signed int) this->getCommand()->value != 1 && (signed int) this->getCommand()->value != -1) {					//Bounds checking, but stricter (Decimal values indicate a partial oepning of the hand, which us not the best practice
 			Serial.println("Error: Value for Grab commands should be either -1 or 1");				//Print an error message and give explanation
 			return;																					//Exits to the main loop if bounds are not met
 		}
-		grabDriver->move((double)(currentCmd->value) * 60);													//Do the grab (set value, motion depends on sign))
+		grabDriver->move((signed int)(currentCmd->value) * -400);													//Do the grab (set value, motion depends on sign))
 		break;
 	case Controller::Arm_Operation::EXTEND:															//Extend the arm!
-		if (this->getCommand()->value > 1 || this->getCommand()->value < -1) {						//Bounds checking, but not strict (arm should extend to variable lengths
+		if ((double) this->getCommand()->value > 1 || (double) this->getCommand()->value < -1) {						//Bounds checking, but not strict (arm should extend to variable lengths
 			Serial.println("Error: Value for Arm Extension commands should be between -1 and 1");	//Print an error message and give explanation
 			return;																					//Exits to the main loop if bounds are not met
 		}
