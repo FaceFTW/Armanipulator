@@ -119,7 +119,7 @@ void Controller::executeCmd() {
 			Serial.println("Error: Value for Grab commands should be either -1 or 1");				//Print an error message and give explanation
 			return;																					//Exits to the main loop if bounds are not met
 		}
-		grabDriver->move((signed int)(currentCmd->value) * -400);													//Do the grab (set value, motion depends on sign))
+		grabDriver->move((signed int)(currentCmd->value) * -600);													//Do the grab (set value, motion depends on sign))
 		break;
 	case Controller::Arm_Operation::EXTEND:															//Extend the arm!
 		if ((double) this->getCommand()->value > 1 || (double) this->getCommand()->value < -1) {						//Bounds checking, but not strict (arm should extend to variable lengths
