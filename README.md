@@ -1,5 +1,23 @@
 ﻿# Armanipulator
-This project is created by Alex Westerman, Dalton Yu, Felix Xu, and Alexander Luu as a final project for the Project Lead the Way Engineering Design and Development Capstone course. 
+This project is created by Alex Westerman, Dalton Yu, Felix Xu, and Alexander Luu as a final project for the Project Lead the Way Engineering Design and Development Capstone course.
+
+## Licensing
+Armanipulator is licensed under the GNU GPL v3 License
+
+    Copyright (C) 2019  Alex Westerman, Felix Xu, Dalton Yu, and Alexander Luu
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ## Project resources
 - Documentation for the firmware code is available on the [Github Pages](https://faceftw.github.io/Armanipulator)  website Other forms of the documentation (PDF, RTF) can be found in the [docs](https://github.com/FaceFTW/Armanipulator/tree/master/docs) folder of the repository
