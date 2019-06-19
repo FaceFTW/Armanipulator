@@ -4,3 +4,4 @@
 /** @class Pinout
  * 
  */
+class Pinout
