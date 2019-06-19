@@ -5,7 +5,8 @@
 
 #ifndef FINGERCONTROLLER_H_
 #define FINGERCONTROLLER_H_
-class BasicStepperDriver;
+
+#include "StepperDriver/src/BasicStepperDriver.h"
 
 /**@class FingerController
  * @brief Used to serve as the interface between the finger and the MCU
@@ -35,28 +36,16 @@ public:
 	/**@fn virtual FingerController::~FingerController
 	 * @brief obligatory destructor for this class
 	 */
-
+	virtual ~FingerController();
 	//This code is tenative. It is not good code due to the number of pointer refs and jump operations it would cause
 
-	void doOperation(Finger_Op _op){
-		//Change the executed method dependent on _op
-		switch(_op){
-		case Finger_Op::EXTEND:
-			//Placeholder
-			break;
-		case Finger_Op::CURL:
-			//Placeholder
-			break;
-		}
-	}
+	void doOperation(Finger_Op _op);
 
-	void extendFinger(){
-		//Used for finger extenstion
-	}
+	//Used for finger extenstion
+	void extendFinger();
 
-	void curlFinger(){
-		//Used for finger curling
-	}
+	//Used for finger curling
+	void curlFinger();
 
 private:
 	//We asssume stepper motors here to prevent increasing size by adding the servo library
